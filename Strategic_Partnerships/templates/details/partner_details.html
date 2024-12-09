@@ -1,0 +1,78 @@
+{% extends 'base.html' %} {% load static %} {% load i18n %} {% block body %}
+{% if image_banner_inside_page %}
+    <div class="breadcumb-wrapper" data-bg-src="{{ image_banner_inside_page.url }}">
+{% else %}
+    <div class="breadcumb-wrapper" data-bg-src="{% static 'assets/img/bg/breadcumb-bg.jpg' %}">
+{% endif %}  
+    <div class="container">
+      <div class="breadcumb-content">
+        <h1 class="breadcumb-title">{% trans 'Strategic ' %} {{ partners.partner_title }}</h1>
+        <ul class="breadcumb-menu">
+          <li>
+            <a href="{% url 'home' %}">{% trans 'Home' %}</a>
+          </li>
+          <li>
+            {% trans 'Strategic Partnerships' %}
+          </li>
+          <li>
+            {% trans 'Strategic ' %} {{ partners.partner_title }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="space" id="about-sec">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-6 mb-30 mb-xl-0">
+          <div class="img-box6">
+            <div class="img1">
+              <img style="height: 40vh; width: 100%;" src="{{ partners.partner_main_image.url }}" alt="About" />
+            </div>
+            <div class="img2" data-mask-src="{% static 'assets/img/normal/about_mask.png' %}">
+              <img data-mask-src="{% static 'assets/img/normal/about_mask.png' %}" style="width: 150px; height: 150px;" src="{{ partners.first_person_image.url }}" alt="About" />
+            </div>
+            <div class="project-counter" data-mask-src="{% static 'assets/img/normal/about_mask.png' %}">
+              <img data-mask-src="{% static 'assets/img/normal/about_mask.png' %}" style="width: 180px; height: 190px;" src="{{ partners.second_person_image.url }}" alt="About" />
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-6 text-center text-xl-start {% if LANGUAGE_CODE == 'ar' %}rtl{% endif %}">
+          
+          <div class="title-area mb-4">
+            <h6 class="sec-title">{{ partners.partner_title }}</h6>
+            <p class="sec-text">{{ partners.partner_description }}</p>
+          </div>
+          <div class="feature-and-counter">
+            <div class="about-feature-wrap">
+              <div class="about-feature">
+                <div class="box-icon">
+                  <img style="height: inherit;" class="round" src="{{ partners.first_person_image.url }}" alt="icon" />
+                </div>
+                <div class="media-body">
+                  <h3 class="box-title">{{ partners.first_person_name }}</h3>
+                  <p class="box-text">{{ partners.first_person_position }}</p>
+                </div>
+              </div>
+              <div class="about-feature">
+                <div class="box-icon">
+                  <img style="height: inherit;" class="round" src="{{ partners.second_person_image.url }}" alt="icon" />
+                </div>
+                <div class="media-body">
+                  <h3 class="box-title">{{ partners.second_person_name }}</h3>
+                  <p class="box-text">{{ partners.second_person_position }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+{% endblock %}

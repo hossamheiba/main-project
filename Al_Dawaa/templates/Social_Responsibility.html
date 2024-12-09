@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block body %}
+<!-- Breadcrumb Section -->
+<div class="breadcumb-wrapper" data-bg-src="{% if page_social_responsibility.image_banner %}{{ page_social_responsibility.image_banner.url }}{% else %}{% static 'assets/img/bg/breadcumb-bg.jpg' %}{% endif %}">
+    <div class="container">
+        <div class="breadcumb-content">
+            <h1 class="breadcumb-title">{% trans 'Social Responsibility' %}</h1>
+            <ul class="breadcumb-menu">
+                <li><a href="{% url 'home' %}">{% trans 'Home' %}</a></li>
+                <li>{% trans 'Al Dawaa' %}</li>
+                <li>{% trans 'Social Responsibility' %}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Page Title and Description -->
+<div class="container mt-5">
+    <div class="blog-content">
+        <h2 class="blog-title">{{ page_social_responsibility.page_title }}</h2>
+        <p class="blog-text">{{ page_social_responsibility.page_description }}</p>
+    </div>
+</div>
+
+<!-- Social Responsibility Cards Section -->
+<section class="bg-smoke p-4" id="blog-sec">
+    <div class="container">
+        <div class="row gy-4 m-auto">
+            {% for card in card_social_responsibility %}
+            <div class="col-xl-4 col-md-6 m-auto my-4">
+                <div class="blog-box">
+                    <div class="blog-img">
+                        <img src="{{ card.card_image.url }}" alt="blog image">
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="box-title">{{ card.card_title }}</h3>
+                        <p class="box-text">{{ card.card_description }}</p>
+                        {% if card.social_responsibility_details.slug %}
+                            <a href="{% url 'Al-Dawaa:social_responsibility_details' card.social_responsibility_details.slug %}" class="th-btn btn-sm mt-4">Read More</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

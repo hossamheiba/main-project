@@ -1,0 +1,364 @@
+{% load static %} {% load i18n %}
+
+<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}"dir="{% if LANGUAGE_CODE == 'ar' %}rtl{% else %}ltr{% endif %}">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Al-Dawaa - Dmsco</title>
+    <meta name="author" content="Dmsco" />
+    <meta name="description" content="Al-Dawaa - Dmsco Template" />
+    <meta name="keywords" content="Al-Dawaa - Dmsco Template" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/img/logo.png' %}" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'assets/css/app.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+    <style>
+        .main-menu {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        #header:hover .main-menu {
+            display: block;
+            opacity: 1;
+        }
+
+        .carousel-inner,
+        .carousel-item {
+            height: 100vh;
+        }
+
+        video {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+  
+          @media (max-width: 920px) {
+            .language-switcher {
+              display: none;
+            }
+          }
+    </style>
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="loader"></div>
+        </div>
+    </div>
+
+
+    <div class="th-menu-wrapper">
+        <div class="th-menu-area text-center">
+            <button class="th-menu-toggle">
+                <i class="fal fa-times"></i>
+            </button>
+            <div class="mobile-logo">
+                <a href="{% url 'home' %}">
+                    <img style="height: 110px;" src="{% static 'assets/img/logo.png' %}" alt="Dmsco">
+                </a>
+            </div>
+            
+            <div class="th-mobile-menu">
+              <ul>
+                <div class="d-flex justify-content-center align-items-center">
+                  <div class="col-auto">
+                    <form action="{% url 'set_language' %}" method="post">
+                      {% csrf_token %}
+                      <input name="next" type="hidden" value="{{ request.get_full_path }}" />
+                  
+                      {% if LANGUAGE_CODE == 'ar' %}
+                        <button type="submit" name="language" value="en" class="border-0" style="background-color: white;">
+                          <img src="{% static 'assets/img/icon/english.png' %}" alt="icon" />
+                          <span class="label"></span>
+                        </button>
+                      {% else %}
+                        <button type="submit" name="language" value="ar" class="border-0" style="background-color: white;">
+                          <img src="{% static 'assets/img/icon/saudi-arabia.png' %}" alt="icon" />
+                          <span class="label"></span>
+                        </button>
+                      {% endif %}
+                    </form>
+                  </div>
+                </div>
+                
+                <li>
+                  <a href="{% url 'home' %}">{% trans 'Home' %}</a>
+                </li>
+                <li class="menu-item-has-children">
+                  <a href="#">{% trans 'Dmsco' %}</a>
+                  <ul class="sub-menu">
+                    <li>
+                      <a href="{% url 'Dmsco:about_us' %}">{% trans 'About Dmsco' %}</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'Dmsco:board_of_directors' %}">{% trans 'Board Of Directors' %}</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'Dmsco:our_brands' %}">{% trans 'Our Brands' %}</a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="menu-item-has-children">
+                  <a href="#">{% trans 'Al-Dawaa' %}</a>
+                  <ul class="sub-menu">
+                    <li>
+                      <a href="{% url 'Al-Dawaa:we_aldawaa' %}">{% trans 'We Al-Dawaa' %}</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'Al-Dawaa:departments' %}">{% trans 'Al-Dawaa Departments' %}</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'Al-Dawaa:social_responsibility' %}">{% trans 'Social Responsibility' %}</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'Al-Dawaa:our_programs' %}">{% trans 'Our Programs' %}</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="{% url 'innovations:innovation_expansion_view' %}">{% trans 'Innovation & Expansion' %}</a>
+                </li>
+                <li>
+                  <a href="{% url 'Strategic:partner' %}">{% trans 'Strategic Partnerships' %}</a>
+                </li>
+                <li>
+                  <a href="{% url 'Tenders:tenders' %}">{% trans 'Tenders' %}</a>
+                </li>
+                <li class="menu-item-has-children">
+                  <a href="#">{% trans 'News & Media center' %}</a>
+                  <ul class="sub-menu">
+                    <li>
+                      <a href="{% url 'news_media:news_section' %}">{% trans 'news' %}</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'news_media:media_section' %}">{% trans 'Media' %}</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://www.al-dawaa.com/english/">{% trans 'Al-Dawaa Shop' %}</a>
+                </li>
+                <li>
+                  <a href="https://careers.al-dawaa.com/en/">{% trans 'Careers' %}</a>
+                </li>
+                <li>
+                  <a href="https://www.al-dawaa.com.sa/en-ipo/">{% trans 'IPO' %}</a>
+                </li>
+                <li>
+                  <a href="{% url 'Contact_Us:contact_us' %}">{% trans 'Contact Us' %}</a>
+                </li>
+              </ul>
+            </div>
+        </div>
+    </div>
+
+    <header id="header" class="th-header header-layout1 header-layout5">
+        <div class="sticky-wrapper">
+            <div class="menu-area">
+                <div class="container">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-auto">
+                            <div class="header-logo">
+                                <a href="{% url 'home' %}">
+                                    <img style="width: 108px;" src="{% static 'assets/img/logo.png' %}"
+                                        alt="Dmsco">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-auto d-none d-lg-inline-block">
+                          <nav class="main-menu d-none d-lg-inline-block">
+                            <ul>
+                              <li>
+                                <a href="{% url 'home' %}">{% trans 'Home' %}</a>
+                              </li>
+          
+                              <li class="menu-item-has-children">
+                                <a href="#">{% trans 'Dmsco' %}</a>
+                                <ul class="sub-menu">
+                                  <li>
+                                    <a href="{% url 'Dmsco:about_us' %}">{% trans 'About Dmsco' %}</a>
+                                  </li>
+                                  <li>
+                                    <a href="{% url 'Dmsco:board_of_directors' %}">{% trans 'Board Of Directors' %}</a>
+                                  </li>
+                                  <li>
+                                    <a href="{% url 'Dmsco:our_brands' %}">{% trans 'Our Brands' %}</a>
+                                  </li>
+                                </ul>
+                              </li>
+          
+                              <li class="menu-item-has-children">
+                                <a href="#">{% trans 'Al-Dawaa' %}</a>
+                                <ul class="sub-menu">
+                                  <li>
+                                    <a href="{% url 'Al-Dawaa:we_aldawaa' %}">{% trans 'We Al-Dawaa' %}</a>
+                                  </li>
+                                  <li>
+                                    <a href="{% url 'Al-Dawaa:departments' %}">{% trans 'Al-Dawaa Departments' %}</a>
+                                  </li>
+                                  <li>
+                                    <a href="{% url 'Al-Dawaa:social_responsibility' %}">{% trans 'Social Responsibility' %}</a>
+                                  </li>
+                                  <li>
+                                    <a href="{% url 'Al-Dawaa:our_programs' %}">{% trans 'Our Programs' %}</a>
+                                  </li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="{% url 'innovations:innovation_expansion_view' %}">{% trans 'Innovation & Expansion' %}</a>
+                              </li>
+                              <li>
+                                <a href="{% url 'Strategic:partner' %}">{% trans 'Strategic Partnerships' %}</a>
+                              </li>
+                              <li>
+                                <a href="{% url 'Tenders:tenders' %}">{% trans 'Tenders' %}</a>
+                              </li>
+                              <li class="menu-item-has-children">
+                                <a href="#">{% trans 'News & Media center' %}</a>
+                                <ul class="sub-menu">
+                                  <li>
+                                    <a href="{% url 'news_media:news_section' %}">{% trans 'news' %}</a>
+                                  </li>
+                                  <li>
+                                    <a href="{% url 'news_media:media_section' %}">{% trans 'Media' %}</a>
+                                  </li>
+                                </ul>
+                              </li>
+                              <li>
+                                <a href="https://www.al-dawaa.com/english/">{% trans 'Al-Dawaa Shop' %}</a>
+                              </li>
+                              <li>
+                                <a href="https://careers.al-dawaa.com/en/">{% trans 'Careers' %}</a>
+                              </li>
+                              <li>
+                                <a href="https://www.al-dawaa.com.sa/en-ipo/">{% trans 'IPO' %}</a>
+                              </li>
+                              <li>
+                                <a href="{% url 'Contact_Us:contact_us' %}">{% trans 'Contact Us' %}</a>
+                              </li>
+                            </ul>
+                          </nav>
+                        </div>
+          
+                        <div class="col-auto language-switcher">
+                          <form action="{% url 'set_language' %}" method="post">
+                            {% csrf_token %} {% get_current_language as LANGUAGE_CODE %}
+                            <input name="next" type="hidden" value="{{ request.get_full_path }}" />
+          
+                            {% if LANGUAGE_CODE == 'ar' %}
+                              <button type="submit" name="language" value="en" style="background-color: transparent;" class="border-0 ">
+                                <img src="{% static 'assets/img/icon/english.png' %}" alt="icon" />
+                                <span class="label"></span>
+                              </button>
+                            {% else %}
+                              <button type="submit" name="language" value="ar" style="background-color: transparent;" class="border-0 ">
+                                <img src="{% static 'assets/img/icon/saudi-arabia.png' %}" alt="icon" />
+                                <span class="label"></span>
+                              </button>
+                            {% endif %}
+                          </form>
+                        </div>
+          
+                        <div class="col-auto">
+                          <div class="header-button">
+                            <button type="button" class="th-menu-toggle d-block d-lg-none"><i class="far fa-bars"></i></button>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div class="th-hero-wrapper hero-5" id="hero">
+      <div class="swiper th-slider" id="heroSlide5" data-slider-options='{"effect":"fade","autoHeight":true}'>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="hero-inner">
+                    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active position-relative">
+                                    <!-- Video container -->
+                                    <video class="d-block w-100 h-100" autoplay playsinline controls>
+                                        <source src="{{ homepgae.video.url }}" type="video/mp4">
+                                    </video>
+          
+                                    <img class="img-fluid w-50 position-absolute" src="{% static 'assets/img/Asset 1@4x.png' %}"
+                                      alt="" style="bottom: 50px; right: 18px; opacity: .2; height: 100vh;">
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="hero-social">
+            <div class="box-shape"></div>
+            <span class="social-title">Follow Us:</span>
+            <div class="th-social">
+                {% if homepgae.facebook %}
+                    <a href="{{ homepgae.facebook }}" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                {% endif %}
+                {% if homepgae.x %}
+                    <a href="{{ homepgae.x }}" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14" viewBox="0 0 512 512" class="hover-icon">
+                            <path fill="#fcc00c" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
+                        </svg>
+                    </a>
+                {% endif %}
+                {% if homepgae.linkedin %}
+                    <a href="{{ homepgae.linkedin }}" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                {% endif %}
+                {% if homepgae.instagram %}
+                    <a href="{{ homepgae.instagram }}" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                {% endif %}
+                {% if homepgae.youtube %}
+                    <a href="{{ homepgae.youtube }}" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                {% endif %}
+            </div>
+            
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="{% static 'assets/js/vendor/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/app.min.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+
+</body>
+
+</html>

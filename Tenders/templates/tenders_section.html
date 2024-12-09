@@ -1,0 +1,107 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% load i18n %} 
+
+{% block body %}
+  {% if image_banner_tender.image_banner_tender %}
+    <div 
+      class="breadcumb-wrapper" 
+      data-bg-src="{{ image_banner_tender.image_banner_tender.url }}" 
+      style="background-image: url('{{ image_banner_tender.image_banner_tender.url }}');"
+    >
+  {% else %}
+    <div 
+      class="breadcumb-wrapper" 
+      data-bg-src="{% static 'assets/img/bg/breadcumb-bg.jpg' %}" 
+      style="background-image: url('{% static 'assets/img/bg/breadcumb-bg.jpg' %}');"
+    >
+  {% endif %}
+
+    <div class="container">
+      <div class="breadcumb-content">
+        <h1 class="breadcumb-title">{% trans 'tenders' %}</h1>
+        <ul class="breadcumb-menu">
+          <li>
+            <a href="{% url 'home' %}">{% trans 'Home' %}</a>
+          </li>
+          <li>
+            {% trans 'tenders' %}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- tenders.html -->
+  <section class="bg-smoke space">
+    <div class="container">
+      <div class="col-lg">
+        <div class="title-area text-center text-lg-start">
+          <h2 class="sec-title" style="{% if LANGUAGE_CODE == 'ar' %}text-align: right;{% endif %}">{% trans 'Tenders' %}</h2>
+        </div>
+      </div>
+      <div class="nav service-block-tab" id="service-block-tab" role="tablist">
+        <!-- Loop to create tabs -->
+        <button 
+            class="tab-btn active" 
+            data-bs-toggle="tab" 
+            data-bs-target="#all" 
+            role="tab" 
+            aria-selected="true" 
+            aria-controls="all">
+            <div class="box-icon">
+              <img src="{% static 'assets/img/icon/all.svg' %}" alt="All categories icon" aria-hidden="true" />
+            </div>
+            {% trans 'ALL' %}
+        </button>
+        {% for category in categories %}
+            <button 
+                class="tab-btn" 
+                data-bs-toggle="tab" 
+                data-bs-target="#tab-{{ category.id }}" 
+                role="tab" 
+                aria-selected="false" 
+                aria-controls="tab-{{ category.id }}">
+                <div class="box-icon">
+                  <img src="{{ category.tender_image_or_icon.url }}" alt="Icon representing {{ category.tender_title }}" />
+                </div>
+                {{ category.tender_title }}
+            </button>
+        {% endfor %}
+      </div>
+    
+      <div class="tab-content">
+        <!-- 'All' Tab Content -->
+        <div class="tab-pane fade show active" id="all">
+          {% for category in categories %}
+            {% for tender in category.tenders.all %}
+              <div class="service-block mb-4" data-bg-src="{% static 'assets/img/bg/service_block_bg.png' %}">
+                <div class="box-content">
+                  <h3 class="box-title">
+                    <a href="{{ tender.category_pdf_file.url }}">{{ tender.category_title }}</a>
+                  </h3>
+                  <p class="box-text">{{ tender.category_description }}</p>
+                </div>
+              </div>
+            {% endfor %}
+          {% endfor %}
+        </div>
+        <!-- Specific Category Tabs Content -->
+        {% for category in categories %}
+          <div class="tab-pane fade" id="tab-{{ category.id }}">
+            {% for tender in category.tenders.all %}
+              <div class="service-block mb-4" data-bg-src="{% static 'assets/img/bg/service_block_bg.png' %}">
+                <div class="box-content">
+                  <h3 class="box-title">
+                    <a href="{{ tender.category_pdf_file.url }}">{{ tender.category_title }}</a>
+                  </h3>
+                  <p class="box-text">{{ tender.category_description }}</p>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endblock %}

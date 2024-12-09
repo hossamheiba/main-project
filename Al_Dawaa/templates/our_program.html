@@ -1,0 +1,60 @@
+{% extends 'base.html' %} {% load static %} {% load i18n %} {% block body %}
+<div class="breadcumb-wrapper" data-bg-src="{% if image_banner_program.image_banner_program %}{{ image_banner_program.image_banner_program.url }}{% else %}{% static 'assets/img/bg/breadcumb-bg.jpg' %}{% endif %}">
+<div class="container">
+      <div class="breadcumb-content">
+        <h1 class="breadcumb-title">{% trans 'Our Programs' %}</h1>
+        <ul class="breadcumb-menu">
+          <li>
+            <a href="{% url 'home' %}">{% trans 'Home' %}</a>
+          </li>
+          <li>
+            {% trans 'Al Dawaa' %}
+          </li>
+          <li>
+            {% trans 'Our Programs' %}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <section class="bg-smoke p-4" id="blog-sec">
+    <div class="container">
+      <div class="row justify-content-lg-between justify-content-center align-items-end">
+        <div class="col-lg">
+          <div class="title-area text-center text-lg-start">
+            <h2 class="sec-title" style="{% if LANGUAGE_CODE == 'ar' %}text-align: right;{% endif %}">{% trans 'OUR PROGRAMS' %}</h2>
+          </div>
+      </div>
+        <div class="col-lg-auto d-none d-lg-block">
+          <div class="sec-btn">
+            <div class="icon-box">
+              <button class="slider-arrow service-prev default"><i class="far fa-arrow-left"></i></button>
+              <button class="slider-arrow service-next default"><i class="far fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="service-list-area">
+        {% for program in image_banner_program.process_image.all %}
+          <div class="service-list-wrap {% if forloop.first %}active{% endif %}">
+            <div class="service-list">
+              <div class="box-icon">
+                <img style="width: 30px;" src="{{ program.program_image_or_icon.url }}" alt="">
+              </div>
+              <div class="content-wrap">
+                <div class="box-title-wrap">
+                  <h3 class="box-title">{{ program.program_title }}</h3>
+                </div>
+                <div class="box-content">
+                  <h3 class="box-title">{{ program.program_title }}</h3>
+                  <p class="box-text">{{ program.program_description }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endblock %}

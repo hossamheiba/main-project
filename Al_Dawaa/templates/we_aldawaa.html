@@ -1,0 +1,108 @@
+{% extends 'base.html' %} {% load static %} {% load i18n %} {% block body %}
+  {% if aldawaa.image_banner %}
+  <div class="breadcumb-wrapper" data-bg-src="{{ aldawaa.image_banner.url }}">
+  {% else %}
+  <div class="breadcumb-wrapper" data-bg-src="{% static 'assets/img/bg/breadcumb-bg.jpg' %}">
+  {% endif %}
+    <div class="container">
+      <div class="breadcumb-content">
+        <h1 class="breadcumb-title">{% trans 'We Aldawaa' %}</h1>
+        <ul class="breadcumb-menu">
+          <li>
+            <a href="{% url 'home' %}">{% trans 'Home' %}</a>
+          </li>
+          <li>
+            {% trans 'Al Dawaa' %}
+          </li>
+          <li>
+            {% trans 'We Aldawaa' %}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <section class="overflow-hidden" id="service-sec">
+    <div class="container">
+        <div class="th-blog blog-single has-post-thumbnail mt-5">
+            <div class="blog-img">
+                <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="{{aldawaa.section_image.url}}" class="d-block w-100 " style="height:60vh;"
+                                alt="image">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="blog-content">
+
+                <h2 class="blog-title">
+                    {{aldawaa.section_title}}
+                </h2>
+                <p class="blog-text">
+                    {{aldawaa.section_description }}
+                </p>
+            </div>
+        </div>
+
+        <div class="container mb-4">
+            <div class="feature-list-wrap style2">
+                {% for icon in aldawaa.process_icon.all|slice:"4" %}
+                <div class="feature-list">
+                    <div class="box-icon"><img src="{{icon.feature_image_or_icon.url}}" alt="image"></div>
+                    <div class="media-body">
+                        <h3 class="box-title">+{{ icon.feature_count }}</h3>
+                        <p class="box-text">{{ icon.feature_title }}</p>
+                    </div>
+                </div>
+                <div class="feature-list-line"></div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        
+        <section class="overflow-hidden space background-image arrow-wrap shape-mockup-wrap mb-4"
+            style="background-image: url('{% static 'assets/img/bg/testi_bg_7.jpg' %}');">
+            <div class="shape-mockup jump" style="top: 10%; right: 0px;">
+                <img src="{% static 'assets/img/shape/vectors_1.png' %}" alt="shape">
+            </div>
+            <div class="shape-mockup moving" style="bottom: 0%; left: 2%;">
+                <img src="{% static 'assets/img/shape/vectors_2.png' %}" alt="shape">
+            </div>
+            <div class="container">
+                <div class="testi-area7">
+                    <div class="slider-area">
+                        <div class="swiper th-slider has-shadow tab-view swiper-initialized swiper-horizontal swiper-backface-hidden"
+                            id="testiSlide7"
+                            data-slider-options="{&quot;effect&quot;:&quot;slide&quot;,&quot;thumbs&quot;:{&quot;swiper&quot;:&quot;.thumb-slider1&quot;}}">
+                            <div class="swiper-wrapper" aria-live="off">
+                                {% for time in aldawaa.process_timeline.all %}
+                                    <div class="swiper-slide" role="group" aria-label="{{ forloop.counter }} / {{ aldawaa.process_timeline.count }}"
+                                        data-swiper-slide-index="{{ forloop.counter0 }}" style="width: 1116px; margin-right: 24px;">
+                                        <div class="testi-style7">
+                                            <h3 class="box-title">{{ time.Time_line_year }}</h3>
+                                            <p class="box-text">{{ time.Time_line_description }}</p>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                        </div>
+                        <button data-slider-prev="#thumb-slider1, #testiSlide7" class="slider-arrow slider-prev">
+                            <i class="far fa-arrow-left"></i>
+                        </button>
+                        <button data-slider-next="#thumb-slider1, #testiSlide7" class="slider-arrow slider-next">
+                            <i class="far fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+</section>
+  
+{% endblock %}

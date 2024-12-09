@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block body %}
+  <!-- Breadcrumb Section -->
+  {% if about_section.image_banner %}
+    <div class="breadcumb-wrapper" data-bg-src="{{ about_section.image_banner.url }}" loading="lazy">
+  {% else %}
+    <div class="breadcumb-wrapper" data-bg-src="{% static 'assets/img/bg/breadcumb-bg.jpg' %}" loading="lazy">
+  {% endif %}
+    <div class="container">
+      <div class="breadcumb-content">
+        <h1 class="breadcumb-title">{% trans 'About us' %}</h1>
+        <ul class="breadcumb-menu">
+          <li><a href="{% url 'home' %}">{% trans 'Home' %}</a></li>
+          <li>{% trans 'Dmsco' %}</li>
+          <li>{% trans 'About Us' %}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- About Us Section -->
+  <div class="space" id="about-sec">
+    <div class="shape-mockup jump d-none d-md-block" data-top="10%" data-right="5%">
+      <img src="{% static 'assets/img/hero/hero_shape_8_2.svg' %}" alt="{% trans 'Shape' %}" />
+    </div>
+    <div class="container">
+      <div class="row flex-row-reverse text-center text-xl-start">
+        <div class="col-xl-6">
+          <div class="ps-xl-4 ms-xl-2 mb-40 mb-xl-0">
+            <div class="title-area mb-32">
+              <h2 class="sec-title text-center">{% trans 'About Us' %}</h2>
+            </div>
+
+            {% if about_section.video %}
+              <div class="th-video why-video1">
+                <video style="border-radius: 20px" autoplay playsinline controls>
+                  <source src="{{ about_section.video.url }}" type="video/mp4" />
+                </video>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="col-xl-6 mb-40 mb-xl-0">
+          <div class="pe-xxl-4">
+            <div class="img-box7 style2">
+              <div class="img1">
+                <img data-mask-src="{{ about_section.image.url }}" src="{{ about_section.image.url }}" alt="{% trans 'About Us Image' %}" />
+              </div>
+              <div class="about-counter">
+                <h3 class="box-number text-theme">
+                  <span class="counter-number">{{ about_section.Years_Of_Experienced }}</span>+
+                </h3>
+                <h4 class="box-title">{% trans 'Years Of Experienced' %}</h4>
+              </div>
+            </div>
+            <p class="mt-35 mb-30" style="{% if LANGUAGE_CODE == 'ar' %}text-align: right;{% endif %}">{{ about_section.description }}</p>
+            <div class="btn-group justify-content-center">
+              <div class="cta-call style2">
+                <div class="box-icon">
+                  <i class="fa-solid fa-headset"></i>
+                </div>
+                <div class="media-body">
+                  <p class="box-text">{% trans "Call Now" %}</p>
+                  <h3 class="box-title"><a href="tel:920000838">920000838</a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Process Cards Section -->
+  <section>
+    <div class="container">
+      <div class="row process-card-wrap">
+        {% for card in about_section.process_cards.all %}
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <div class="process-card h-100">
+              <div class="box-img">
+                <div class="img">
+                  <img style="height: 130px;" src="{{ card.image_card.url }}" alt="{{ card.title_card }}" class="img-fluid" />
+                </div>
+                <p class="box-number">{{ forloop.counter }}</p>
+              </div>
+              <h3 class="box-title mt-3">{{ card.title_card }}</h3>
+              <p class="box-text">{{ card.description_card }}</p>
+
+              {% if card.is_collapsible %}
+                <p class="d-inline-flex gap-1">
+                  <a class="btn shadow-none" data-bs-toggle="collapse" href="#collapse{{ forloop.counter }}" role="button" aria-expanded="false" aria-controls="collapse{{ forloop.counter }}">
+                    {{ card.description_card }}
+                    <i class="fas fa-angle-double-down"></i>
+                  </a>
+                </p>
+                <div class="row">
+                  <div class="col">
+                    <div class="collapse multi-collapse" id="collapse{{ forloop.counter }}">
+                      <div class="card card-body border-0">{{ card.collapse_description }}</div>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endblock %}

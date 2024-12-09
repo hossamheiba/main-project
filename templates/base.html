@@ -1,0 +1,450 @@
+{% load static %} {% load i18n %}
+
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}"dir="{% if LANGUAGE_CODE == 'ar' %}rtl{% else %}ltr{% endif %}">
+
+  <head>
+    <meta charset="utf-8" />
+    {% comment %} <meta http-equiv="x-ua-compatible" content="ie=edge" /> {% endcomment %}
+    <title>Al-Dawaa - Dmsco</title>
+    <meta name="author" content="Dmsco" />
+    <meta name="description" content="Al-Dawaa - Dmsco Template" />
+    <meta name="keywords" content="Al-Dawaa - Dmsco Template" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/img/logo.png' %}" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="{% static 'assets/css/app.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" />
+
+    <style>
+      @media (max-width: 920px) {
+        .language-switcher {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="preloader">
+      <div class="preloader-inner">
+        <div class="loader"></div>
+      </div>
+    </div>
+
+    <div class="th-menu-wrapper">
+      <div class="th-menu-area text-center">
+        <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
+        <div class="mobile-logo">
+          <a href="{% url 'home' %}"><img style="width: 100px" src="{% static 'assets/img/logo.png' %}" alt="Dmsco" /></a>
+        </div>
+        <div class="th-menu-wrapper">
+          <div class="th-menu-area text-center">
+            <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
+            <div class="mobile-logo">
+              <a href="{% url 'home' %}"><img style="width: 100px" src="{% static 'assets/img/logo.png' %}" alt="Dmsco" /></a>
+            </div>
+            <div class="th-mobile-menu"style="direction: {% if LANGUAGE_CODE == 'en' %}ltr{% else %}ltr{% endif %};">
+              <ul>
+                <div class="d-flex justify-content-center align-items-center">
+                  <div class="col-auto">
+                    <form action="{% url 'set_language' %}" method="post">
+                      {% csrf_token %}
+                      <input name="next" type="hidden" value="{{ request.get_full_path }}" />
+
+                      {% if LANGUAGE_CODE == 'ar' %}
+                        <button type="submit" name="language" value="en" class="border-0" style="background-color: transparent;">
+                          <img src="{% static 'assets/img/icon/english.png' %}" alt="icon" />
+                          <span class="label"></span>
+                        </button>
+                      {% else %}
+                        <button type="submit" name="language" value="ar" class="border-0" style="background-color: transparent;">
+                          <img src="{% static 'assets/img/icon/saudi-arabia.png' %}" alt="icon" />
+                          <span class="label"></span>
+                        </button>
+                      {% endif %}
+                    </form>
+                  </div>
+                </div>
+
+                <li>
+                  <a href="{% url 'home' %}">{% trans 'Home' %}</a>
+                </li>
+                <li class="menu-item-has-children">
+                  <a href="#">{% trans 'Dmsco' %}</a>
+                  <ul class="sub-menu">
+                    <li>
+                      <a href="{% url 'Dmsco:about_us' %}">{% trans 'About Dmsco' %}</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'Dmsco:board_of_directors' %}">{% trans 'Board Of Directors' %}</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'Dmsco:our_brands' %}">{% trans 'Our Brands' %}</a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="menu-item-has-children">
+                  <a href="#">{% trans 'Al-Dawaa' %}</a>
+                  <ul class="sub-menu">
+                    <li>
+                      <a href="{% url 'Al-Dawaa:we_aldawaa' %}">{% trans 'We Al-Dawaa' %}</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'Al-Dawaa:departments' %}">{% trans 'Al-Dawaa Departments' %}</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'Al-Dawaa:social_responsibility' %}">{% trans 'Social Responsibility' %}</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'Al-Dawaa:our_programs' %}">{% trans 'Our Programs' %}</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="{% url 'innovations:innovation_expansion_view' %}">{% trans 'Innovation & Expansion' %}</a>
+                </li>
+                <li>
+                  <a href="{% url 'Strategic:partner' %}">{% trans 'Strategic Partnerships' %}</a>
+                </li>
+                <li>
+                  <a href="{% url 'Tenders:tenders' %}">{% trans 'Tenders' %}</a>
+                </li>
+                <li class="menu-item-has-children">
+                  <a href="#">{% trans 'News & Media center' %}</a>
+                  <ul class="sub-menu">
+                    <li>
+                      <a href="{% url 'news_media:news_section' %}">{% trans 'news' %}</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'news_media:media_section' %}">{% trans 'Media' %}</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://www.al-dawaa.com/english/">{% trans 'Al-Dawaa Shop' %}</a>
+                </li>
+                <li>
+                  <a href="https://careers.al-dawaa.com/en/">{% trans 'Careers' %}</a>
+                </li>
+                <li>
+                  <a href="https://www.al-dawaa.com.sa/en-ipo/">{% trans 'IPO' %}</a>
+                </li>
+                <li>
+                  <a href="{% url 'Contact_Us:contact_us' %}">{% trans 'Contact Us' %}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <header class="th-header header-layout1">
+      <div class="sticky-wrapper">
+        <div class="menu-area">
+          <div class="container">
+            <div class="row align-items-center justify-content-between">
+              <div class="col-auto">
+                <div class="header-logo">
+                  <a href="{% url 'home' %}"><img style="width: 82px; margin: -7px 0px 0px 0px" src="{% static 'assets/img/logo.png' %}" alt="Dmsco" /></a>
+                </div>
+              </div>
+
+              <div class="col-auto d-none d-lg-inline-block">
+                <nav class="main-menu d-none d-lg-inline-block">
+                  <ul>
+                    <li>
+                      <a href="{% url 'home' %}">{% trans 'Home' %}</a>
+                    </li>
+
+                    <li class="menu-item-has-children">
+                      <a href="#">{% trans 'Dmsco' %}</a>
+                      <ul class="sub-menu">
+                        <li>
+                          <a href="{% url 'Dmsco:about_us' %}">{% trans 'About Dmsco' %}</a>
+                        </li>
+                        <li>
+                          <a href="{% url 'Dmsco:board_of_directors' %}">{% trans 'Board Of Directors' %}</a>
+                        </li>
+                        <li>
+                          <a href="{% url 'Dmsco:our_brands' %}">{% trans 'Our Brands' %}</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li class="menu-item-has-children">
+                      <a href="#">{% trans 'Al-Dawaa' %}</a>
+                      <ul class="sub-menu">
+                        <li>
+                          <a href="{% url 'Al-Dawaa:we_aldawaa' %}">{% trans 'We Al-Dawaa' %}</a>
+                        </li>
+                        <li>
+                          <a href="{% url 'Al-Dawaa:departments' %}">{% trans 'Al-Dawaa Departments' %}</a>
+                        </li>
+                        <li>
+                          <a href="{% url 'Al-Dawaa:social_responsibility' %}">{% trans 'Social Responsibility' %}</a>
+                        </li>
+                        <li>
+                          <a href="{% url 'Al-Dawaa:our_programs' %}">{% trans 'Our Programs' %}</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="{% url 'innovations:innovation_expansion_view' %}">{% trans 'Innovation & Expansion' %}</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'Strategic:partner' %}">{% trans 'Strategic Partnerships' %}</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'Tenders:tenders' %}">{% trans 'Tenders' %}</a>
+                    </li>
+                    <li class="menu-item-has-children">
+                      <a href="#">{% trans 'News & Media center' %}</a>
+                      <ul class="sub-menu">
+                        <li>
+                          <a href="{% url 'news_media:news_section' %}">{% trans 'news' %}</a>
+                        </li>
+                        <li>
+                          <a href="{% url 'news_media:media_section' %}">{% trans 'Media' %}</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="https://www.al-dawaa.com/english/">{% trans 'Al-Dawaa Shop' %}</a>
+                    </li>
+                    <li>
+                      <a href="https://careers.al-dawaa.com/en/">{% trans 'Careers' %}</a>
+                    </li>
+                    <li>
+                      <a href="https://www.al-dawaa.com.sa/en-ipo/">{% trans 'IPO' %}</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'Contact_Us:contact_us' %}">{% trans 'Contact Us' %}</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+
+              <div class="col-auto language-switcher">
+                <form action="{% url 'set_language' %}" method="post">
+                  {% csrf_token %} {% get_current_language as LANGUAGE_CODE %}
+                  <input name="next" type="hidden" value="{{ request.get_full_path }}" />
+
+                  {% if LANGUAGE_CODE == 'ar' %}
+                    <button type="submit" name="language" value="en" class="border-0" style="background-color: transparent;">
+                      <img src="{% static 'assets/img/icon/english.png' %}" alt="icon" />
+                      <span class="label"></span>
+                    </button>
+                  {% else %}
+                    <button type="submit" name="language" value="ar" class="border-0" style="background-color: transparent;">
+                      <img src="{% static 'assets/img/icon/saudi-arabia.png' %}" alt="icon" />
+                      <span class="label"></span>
+                    </button>
+                  {% endif %}
+                </form>
+              </div>
+
+              <div class="col-auto">
+                <div class="header-button">
+                  <button type="button" class="th-menu-toggle d-block d-lg-none"><i class="far fa-bars"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    {% block body %}
+
+    {% endblock %}
+
+    <footer class="footer-wrapper footer-layout1 footer-layout4" data-bg-src="{% static 'assets/img/bg/back.png' %}">
+      <div class="shape-mockup jump-reverse d-none d-xxl-block" data-bottom="66%" data-left="2%">
+        <img src="{% static 'assets/img/shape/medicine_2.png' %}" alt="shape" />
+      </div>
+
+      <div class="widget-area">
+        <div class="container">
+          <div class="row justify-content-between">
+            <div class="col-md-6 col-xl-auto">
+              <div class="widget footer-widget">
+                <div class="th-widget-about">
+                  <div class="about-logo">
+                    <a href="{% url 'home' %}"><img src="{% static 'assets/img/bg/foter_logo.png' %}" alt="Dmsco" /></a>
+                  </div>
+                  <p class="about-text">
+                    {% trans 'At DMSCO, for more than a quarter of a century, we are interested in health care, providing the highest quality' %}
+                  </p>
+                  <p class="footer-info">
+                    <i class="fal fa-location-dot"></i>
+                    {% trans 'Khobar, Kingdom of Saudi Arabia Eastern Cement Towers King Fahd Road, Al Rawabi' %}
+                  </p>
+                  <p class="footer-info">
+                    <i class="fal fa-envelope"></i>
+                    <a href="mailto:info@al-dawaa.com.sa" class="info-box_link">info@al-dawaa.com.sa</a>
+                  </p>
+                  <p class="footer-info">
+                    <i class="fal fa-phone"></i>
+                    <a href="tel:+40276328246" class="info-box_link">920000838</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-xl-auto">
+              <div class="widget widget_nav_menu footer-widget">
+                <h3 class="widget_title">{% trans 'Quick Links' %}</h3>
+                <div class="menu-all-pages-container">
+                  <ul class="menu">
+                    <li>
+                      <a href="{% url 'home' %}">{% trans 'Home' %}</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'Dmsco:about_us' %}">{% trans 'About Dmsco' %}</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'Dmsco:board_of_directors' %}">{% trans 'Board Of Directors' %}</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'Dmsco:our_brands' %}">{% trans 'Our Brands' %}</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'Al-Dawaa:we_aldawaa' %}">{% trans 'We Al-Dawaa' %}</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'Al-Dawaa:departments' %}">{% trans 'Al-Dawaa Departments' %}</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'Al-Dawaa:social_responsibility' %}">{% trans 'Social Responsibility' %}</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'Al-Dawaa:our_programs' %}">{% trans 'Our Programs' %}</a>
+                    </li>
+                    <li>
+                      <a href="Innovation_Expansion.html">{% trans 'Innovation & Expansion' %}</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-xl-auto">
+              <div class="widget widget_nav_menu footer-widget">
+                <h3 class="widget_title">{% trans 'Quick Links' %}</h3>
+                <div class="menu-all-pages-container">
+                  <ul class="menu">
+                    <li>
+                      <a href="{% url 'Strategic:partner' %}">{% trans 'Strategic Partnerships' %}</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'Tenders:tenders' %}">{% trans 'Tenders' %}</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'news_media:news_section' %}">{% trans 'news' %}</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'news_media:media_section' %}">{% trans 'Media' %}</a>
+                    </li>
+                    <li>
+                      <a href="https://www.al-dawaa.com/english/">{% trans 'Al-Dawaa Shop' %}</a>
+                    </li>
+                    <li>
+                      <a href="https://careers.al-dawaa.com/en/">{% trans 'Careers' %}</a>
+                    </li>
+                    <li>
+                      <a href="https://www.al-dawaa.com.sa/en-ipo/">{% trans 'IPO' %}</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'Contact_Us:contact_us' %}">{% trans 'Contact Us' %}</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-xl-auto">
+              <div class="widget footer-widget">
+                <h3 class="widget_title">{% trans 'Download our app' %}</h3>
+                <div class="newsletter-widget">
+                  <div class="btn-group">
+                    <a href="https://apps.apple.com/sa/app/al-dawaa-pharmacies/id681487514" class="img-btn"><img src="{% static 'assets/img/normal/apple_store.png' %}" alt="icon" /></a><a href="https://play.google.com/store/apps/details?id=com.kr.aldawaa" class="img-btn"><img src="{% static 'assets/img/normal/play_store.png' %}" alt="icon" /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright-wrap">
+        <div class="container">
+          <div class="row gy-2 align-items-center">
+            <div class="col-md-7">
+              <p class="copyright-text">
+                {% trans 'Developed By' %} <i class="fal fa-copyright"></i> 2024
+                <a href="https://www.yellostack.com/" aria-label="Visit YelloStack website" class="accessible-link">YelloStack</a>.{% trans ' All Rights Reserved.' %}
+              </p>
+            </div>
+            <div class="col-md-5 text-center text-md-end">
+              <div class="th-social">
+                <a href="https://www.facebook.com/AldawaaCare/" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a>
+
+                <a href="https://x.com/AlDawaaCare" aria-label="Visit our X (formerly Twitter) page">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14" viewBox="0 0 512 512" class="hover-icon">
+                    <path fill="#102240" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
+                  </svg>
+                </a>
+
+                <a href="https://www.linkedin.com/company/dmsco-inc-" aria-label="Visit our LinkedIn page"><i class="fab fa-linkedin-in"></i></a>
+
+                <a href="https://www.whatsapp.com/" aria-label="Send us a message on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="scroll-top">
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="
+            transition: stroke-dashoffset 10ms linear 0s;
+            stroke-dasharray: 307.919, 307.919;
+            stroke-dashoffset: 307.919;
+          "></path>
+      </svg>
+    </div>
+    <script src="{% static 'assets/js/vendor/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/app.min.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const teamSlider = new Swiper('#teamSlider2', {
+          slidesPerView: 3,
+          spaceBetween: 30,
+          navigation: {
+            nextEl: '[data-slider-next="#teamSlider2"]',
+            prevEl: '[data-slider-prev="#teamSlider2"]'
+          },
+          breakpoints: {
+            0: { slidesPerView: 1 },
+            576: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            992: { slidesPerView: 3 },
+            1200: { slidesPerView: 3 }
+          }
+        })
+      })
+    </script>
+  </body>
+</html>

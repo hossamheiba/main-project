@@ -1,0 +1,72 @@
+{% extends 'base.html' %} {% load static %} {% load i18n %} {% block body %}
+  {% if image_banner_media.image_banner_media %}
+    <div 
+        class="breadcumb-wrapper" 
+        data-bg-src="{{ image_banner_media.image_banner_media.url }}" 
+        style="background-image: url('{{ image_banner_media.image_banner_media.url }}');"
+    >
+{% else %}
+    <div 
+        class="breadcumb-wrapper" 
+        data-bg-src="{% static 'assets/img/bg/breadcumb-bg.jpg' %}" 
+        style="background-image: url('{% static 'assets/img/bg/breadcumb-bg.jpg' %}');"
+    >
+{% endif %}
+   <div class="container">
+      <div class="breadcumb-content">
+        <h1 class="breadcumb-title">{% trans 'media' %}  </h1>
+        <ul class="breadcumb-menu">
+          <li>
+            <a href="{% url 'home' %}">{% trans 'Home' %}</a>
+          </li>
+          <li>
+            {% trans 'News & Media center ' %}
+          </li>
+          <li>
+            {% trans 'media' %} 
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <section class="bg-smoke p-4" id="blog-sec">
+    <div class="container">
+      <div class="row justify-content-lg-between justify-content-center align-items-center">
+        <div class="col-lg">
+          <div class="title-area text-center text-lg-start">
+            <h2 class="sec-title" style="{% if LANGUAGE_CODE == 'ar' %}text-align: right;{% endif %}">{% trans 'Media' %}</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row gy-4">
+        {% for media in media_items %}
+        <div class="col-xl-4 col-md-6">
+          <div class="swiper-slide" role="region" aria-label="Service Slide">
+              <div class="service-grid">
+                  <div class="box-shape">
+                      <img src="{% static 'assets/img/bg/service_grid_shape.png' %}" alt="Service Grid Shape" />
+                  </div>
+                  <div class="box-img">
+                      <div class="img">
+                          <img class="w-100 responsive-image" style="height: 200px;" src="{{ media.media_image.url }}" alt="{{ media.media_title }} " />
+                      </div>
+                  </div>
+                  <div class="box-content">
+                      <h3 class="box-title">{{ media.media_title }}</h3>
+                      <p class="box-text pt-3">{{ media.media_description|truncatewords:20 }}</p>
+                      {% if media.mediadetails.slug %}
+                          <a href="{% url 'news_media:media_details' media.mediadetails.slug %}" class="th-btn btn-sm style2">{% trans 'Read More' %}</a>
+                      {% else %}
+                          <p class="box-text">{% trans 'Details coming soon!' %}</p>
+                      {% endif %}
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endblock %}

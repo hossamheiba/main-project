@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block body %}
+
+<!-- Breadcrumb Section -->
+{% if image_banner_inside_page %}
+    <div class="breadcumb-wrapper" data-bg-src="{{ image_banner_inside_page.url }}">
+{% else %}
+    <div class="breadcumb-wrapper" data-bg-src="{% static 'assets/img/bg/breadcumb-bg.jpg' %}">
+{% endif %}
+
+    <div class="container">
+        <div class="breadcumb-content">
+            <h1 class="breadcumb-title">{% trans 'Department' %} {{ department.section_title }}</h1>
+            <ul class="breadcumb-menu">
+                <li><a href="{% url 'home' %}">{% trans 'Home' %}</a></li>
+                <li>{% trans 'Al Dawaa' %}</li>
+                <li>{% trans 'Departments' %}</li>
+                <li>{% trans 'Department' %} {{ department.section_title }}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Department Section -->
+<section class="th-blog-wrapper space-top space-extra-bottom">
+    <div class="container">
+        <div class="row">
+            <!-- Main Content -->
+            <div class="col-xxl-8 col-lg-7">
+                <div class="th-blog blog-single has-post-thumbnail">
+                    <div class="blog-img">
+                        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="{{ department.section_image.url }}" class="d-block w-100" style="height:40vh" alt="Main Image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <h2 class="blog-title">{{ department.section_title }}</h2>
+                        <p class="blog-text">{{ department.section_description }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-xxl-4 col-lg-5">
+                <aside class="sidebar-area">
+                    <div class="widget widget_categories">
+                        <h3 class="widget_title">Categories</h3>
+                        <ul>
+                            {% for department in departments %}
+                                <li><a href="{% url 'Al-Dawaa:department_detail' department.slug %}">{{ department.section_title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

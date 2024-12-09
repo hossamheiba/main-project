@@ -1,0 +1,8 @@
+# SECRET_KEY=django-insecure-rx8&obvzf#ha__=@6huq9^m^968!2qg%%5=vp52gk70z3^m#c0
+# # DB_URL=postgresql://aldawaa_django_render_pznu_user:sv8GGUlKY0s1KFw78id1WmWTvTlTevT6@dpg-ct9lrt2lqhvc73ek60f0-a.oregon-postgres.render.com/aldawaa_django_render_pznu
+# DEBUG=True
+# CSRF_COOKIE_SECURE=True
+# SESSION_COOKIE_SECURE=True
+# SECURE_SSL_REDIRECT=True
+# X_FRAME_OPTIONS=DENY
+# ALLOWED_HOSTS=[]

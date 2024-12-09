@@ -1,0 +1,61 @@
+{% extends 'base.html' %} {% load static %} {% load i18n %} {% block body %}
+{% if image_banner_inside_page %}
+    <div class="breadcumb-wrapper" data-bg-src="{{ image_banner_inside_page.url }}">
+{% else %}
+    <div class="breadcumb-wrapper" data-bg-src="{% static 'assets/img/bg/breadcumb-bg.jpg' %}">
+{% endif %}    
+<div class="container">
+      <div class="breadcumb-content">
+        <h1 class="breadcumb-title">{% trans 'innovation' %} {{ cardinnovation.detsils_innovation_title }}</h1>
+        <ul class="breadcumb-menu">
+          <li>
+            <a href="{% url 'home' %}">{% trans 'Home' %}</a>
+          </li>
+          <li>
+            {% trans 'Innovation & Expansion' %}
+          </li>
+          <li>
+            {% trans 'innovation' %} {{ cardinnovation.detsils_innovation_title }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <section class="th-blog-wrapper space-top space-extra-bottom">
+    <div class="container">
+      <div class="th-blog blog-single has-post-thumbnail">
+        <div class="blog-img">
+          <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{{ cardinnovation.detsils_innovation_image.url }}" class="d-block w-100" style="height:40vh;" alt="image" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog-content">
+          <h2 class="blog-title">{{ cardinnovation.detsils_innovation_title }}</h2>
+          <p class="blog-text">{{ cardinnovation.detsils_innovation_description }}</p>
+        </div>
+      </div>
+    
+      {% if cardinnovation.video %}
+      
+      <div class="th-video why-video1">
+        <div class="th-video why-video1">
+          <video style="border-radius: 20px" autoplay playsinline controls>
+            <source src="{{ cardinnovation.video.url }}" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+      {% else %}
+
+      {% endif %}
+      
+        
+
+    </div>
+  </section>
+{% endblock %}

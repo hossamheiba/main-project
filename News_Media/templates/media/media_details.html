@@ -1,0 +1,55 @@
+{% extends 'base.html' %} {% load static %} {% load i18n %} {% block body %}
+{% if image_banner_inside_page %}
+    <div class="breadcumb-wrapper" data-bg-src="{{ image_banner_inside_page.url }}">
+{% else %}
+    <div class="breadcumb-wrapper" data-bg-src="{% static 'assets/img/bg/breadcumb-bg.jpg' %}">
+{% endif %}  
+    <div class="container">
+      <div class="breadcumb-content">
+        <h1 class="breadcumb-title">{% trans 'media' %}   {{ media_details_view.media_page_title }}</h1>
+        <ul class="breadcumb-menu">
+          <li>
+            <a href="{% url 'home' %}">{% trans 'Home' %}</a>
+          </li>
+          <li>
+            {% trans 'News & Media center' %}
+          </li>
+          <li>
+            {% trans 'media center' %} 
+          </li>
+          <li>
+            {% trans 'media ' %}  {{ media_details_view.media_page_title }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <section class="th-blog-wrapper space-top space-extra-bottom">
+    <div class="container">
+      <div class="th-blog blog-single has-post-thumbnail">
+        <div class="blog-img">
+
+    
+          {% if media_details_view.media_page_video %}
+      
+          <div class="th-video why-video1">
+            <div class="th-video why-video1">
+              <video style="border-radius: 20px" autoplay playsinline controls>
+                <source src="{{ media_details_view.media_page_video.url }}" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+          {% else %}
+    
+          {% endif %}
+        </div>
+        
+        <div class="blog-content">
+          <h2 class="blog-title">{{ media_details_view.media_page_title }}</h2>
+          <p class="blog-text">{{ media_details_view.media_page_description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

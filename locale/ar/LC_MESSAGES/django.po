@@ -1,0 +1,924 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-18 13:02+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: .\Al_Dawaa\models.py:11 .\Al_Dawaa\models.py:122 .\Al_Dawaa\models.py:149
+#: .\Al_Dawaa\models.py:195 .\Contact_Us\models.py:8 .\Dmsco\models.py:8
+#: .\Dmsco\models.py:54
+msgid "image banner"
+msgstr "لوحة دعائية"
+
+#: .\Al_Dawaa\models.py:13 .\Al_Dawaa\models.py:74 .\Al_Dawaa\models.py:124
+#: .\Al_Dawaa\models.py:151 .\Al_Dawaa\models.py:197 .\Al_Dawaa\models.py:226
+#: .\Contact_Us\models.py:10 .\Dmsco\models.py:10 .\Dmsco\models.py:56
+#: .\Dmsco\models.py:95 .\Innovation_Expansion\models.py:12
+#: .\Innovation_Expansion\models.py:50 .\News_Media\models.py:13
+#: .\News_Media\models.py:63 .\News_Media\models.py:93
+#: .\News_Media\models.py:140 .\Strategic_Partnerships\models.py:11
+#: .\Strategic_Partnerships\models.py:58 .\Tenders\models.py:10
+msgid ""
+"Optional - as you like <br> If no image is selected, an automatic image "
+"appears."
+msgstr "اختياري - حسب رغبتك <br>إذا لم يتم تحديد أي صورة، ستظهر صورة تلقائية."
+
+#: .\Al_Dawaa\models.py:18 .\Al_Dawaa\models.py:175
+msgid "section image"
+msgstr "صورة القسم"
+
+#: .\Al_Dawaa\models.py:22
+msgid "section title"
+msgstr "عنوان القسم"
+
+#: .\Al_Dawaa\models.py:27 .\Al_Dawaa\models.py:176
+msgid "section description"
+msgstr "وصف القسم"
+
+#: .\Al_Dawaa\models.py:33 .\Al_Dawaa\models.py:34
+msgid "We_Aldawaa"
+msgstr "نحن_الدواء"
+
+#: .\Al_Dawaa\models.py:48
+msgid "feature title"
+msgstr "عنوان الميزة"
+
+#: .\Al_Dawaa\models.py:49
+msgid "feature count"
+msgstr "عدد المميزات"
+
+#: .\Al_Dawaa\models.py:51
+msgid "feature image or icon"
+msgstr "صورة مميزة أو أيقونة"
+
+#: .\Al_Dawaa\models.py:62
+msgid "Time line year"
+msgstr "الخط الزمني للسنة"
+
+#: .\Al_Dawaa\models.py:63
+msgid "Time line description"
+msgstr "وصف الخط الزمني"
+
+#: .\Al_Dawaa\models.py:72
+msgid "Image Banner Department"
+msgstr "قسم اللوحة الدعائية"
+
+#: .\Al_Dawaa\models.py:80 .\Al_Dawaa\models.py:81
+msgid "AL Dawaa Department"
+msgstr "قسم الدّواء"
+
+#: .\Al_Dawaa\models.py:95
+msgid "Department Title"
+msgstr "عنوان القسم"
+
+#: .\Al_Dawaa\models.py:96
+msgid "Department Image or Icon"
+msgstr "صورة أو رمز القسم"
+
+#: .\Al_Dawaa\models.py:98 .\Al_Dawaa\models.py:259
+msgid ""
+"To select icons of specific sizes, please visit this site. For icons, visit "
+"<a href=\"https://www.flaticon.com/\" target=\"_blank\">Flaticon</a>."
+msgstr ""
+"لاختيار أيقونات بأحجام معينة، يرجى زيارة هذا الموقع. للحصول على الأيقونات، "
+"تفضل بزيارة <a href=\"https://www.flaticon.com/\" "
+"target=\"_blank\">Flaticon</a>."
+
+#: .\Al_Dawaa\models.py:101
+msgid "Department Description"
+msgstr "وصف القسم"
+
+#: .\Al_Dawaa\models.py:102
+msgid "Background Color"
+msgstr "لون الخلفية"
+
+#: .\Al_Dawaa\models.py:103
+msgid "Text Color"
+msgstr "لون النص"
+
+#: .\Al_Dawaa\models.py:106 .\Al_Dawaa\models.py:107
+msgid "Al Dawaa Department Card"
+msgstr "بطاقة قسم الدواء"
+
+#: .\Al_Dawaa\models.py:118
+msgid ""
+"If you add a Al Dawaa Department Card, you must save and continue editing "
+"before typing any entry for it to appear in the drop-down list."
+msgstr ""
+"إذا قمت بإضافة بطاقة قسم الدواء، يجب عليك الحفظ والاستمرار في التحرير قبل "
+"كتابة أي إدخال حتى يظهر في القائمة المنسدلة."
+
+#: .\Al_Dawaa\models.py:128
+msgid "Section Title"
+msgstr "عنوان القسم"
+
+#: .\Al_Dawaa\models.py:129
+msgid "Section Description"
+msgstr "وصف القسم"
+
+#: .\Al_Dawaa\models.py:130
+msgid "Section Image"
+msgstr "صورة القسم"
+
+#: .\Al_Dawaa\models.py:134 .\Al_Dawaa\models.py:135
+msgid "Department Inside Page"
+msgstr "الصفحة الداخلية للقسم"
+
+#: .\Al_Dawaa\models.py:155
+msgid "page title"
+msgstr "عنوان الصفحة"
+
+#: .\Al_Dawaa\models.py:156
+msgid "page description"
+msgstr "وصف الصفحة"
+
+#: .\Al_Dawaa\models.py:159 .\Al_Dawaa\models.py:160
+msgid "Social_Page_Responsibility"
+msgstr "المسؤولية الاجتماعية للصفحة"
+
+#: .\Al_Dawaa\models.py:174 .\Contact_Us\models.py:36
+msgid "card title"
+msgstr "عنوان البطاقة"
+
+#: .\Al_Dawaa\models.py:179 .\Al_Dawaa\models.py:180
+msgid "Social_Responsibility"
+msgstr "المسؤولية_الاجتماعية"
+
+#: .\Al_Dawaa\models.py:191
+msgid ""
+"If you add a social responsibility card, you must save and continue editing "
+"before typing any entry for it to appear in the drop-down lis"
+msgstr ""
+"إذا قمت بإضافة بطاقة مسؤولية اجتماعية، يجب عليك الحفظ والاستمرار في التحرير "
+"قبل كتابة أي إدخال حتى يظهر في القائمة المنسدلة"
+
+#: .\Al_Dawaa\models.py:201
+msgid "title details social"
+msgstr "تفاصيل العنوان الاجتماعية"
+
+#: .\Al_Dawaa\models.py:202
+msgid "image details social"
+msgstr "تفاصيل الصورة الاجتماعية"
+
+#: .\Al_Dawaa\models.py:203
+msgid "description details social"
+msgstr "تفاصيل الوصف الاجتماعي"
+
+#: .\Al_Dawaa\models.py:208 .\Al_Dawaa\models.py:209
+msgid "Social_Responsibility_details"
+msgstr "تفاصيل المسؤولية الاجتماعية"
+
+#: .\Al_Dawaa\models.py:224
+msgid "image banner program"
+msgstr "برنامج اللوحة الدعائية"
+
+#: .\Al_Dawaa\models.py:232 .\Al_Dawaa\models.py:280
+msgid "Our Program"
+msgstr "برامجنا"
+
+#: .\Al_Dawaa\models.py:233 .\Al_Dawaa\models.py:281
+#: .\Al_Dawaa\templates\our_program.html:5
+#: .\Al_Dawaa\templates\our_program.html:14 .\Home\templates\home.html:130
+#: .\Home\templates\home.html:219 .\templates\base.html:112
+#: .\templates\base.html:200 .\templates\base.html:331
+msgid "Our Programs"
+msgstr "برامجنا"
+
+#: .\Al_Dawaa\models.py:256
+msgid "program image or icon"
+msgstr "صورة البرنامج أو الرمز"
+
+#: .\Al_Dawaa\models.py:264
+msgid "program title"
+msgstr "عنوان البرنامج"
+
+#: .\Al_Dawaa\models.py:266
+msgid "Maximum 100 characters"
+msgstr "الحد الأقصى 100 حرف"
+
+#: .\Al_Dawaa\models.py:270
+msgid "program description"
+msgstr "وصف البرنامج"
+
+#: .\Al_Dawaa\models.py:272
+msgid "Maximum 1000 characters"
+msgstr "الحد الأقصى 1000 حرف"
+
+#: .\Al_Dawaa\templates\Al_Dawaa_Departments.html:9
+#: .\Al_Dawaa\templates\Al_Dawaa_Departments.html:13
+#: .\Home\templates\home.html:124 .\Home\templates\home.html:213
+#: .\templates\base.html:106 .\templates\base.html:194
+#: .\templates\base.html:325
+msgid "Al-Dawaa Departments"
+msgstr "أقسام الدواء"
+
+#: .\Al_Dawaa\templates\Al_Dawaa_Departments.html:11
+#: .\Al_Dawaa\templates\Social_Responsibility.html:12
+#: .\Al_Dawaa\templates\Social_Responsibility\Social_Responsibility_details.html:19
+#: .\Al_Dawaa\templates\department\department.html:17
+#: .\Al_Dawaa\templates\our_program.html:8
+#: .\Al_Dawaa\templates\we_aldawaa.html:12
+#: .\Contact_Us\templates\contact_us.html:12
+#: .\Dmsco\templates\about_us.html:16
+#: .\Dmsco\templates\board_of_directors.html:17
+#: .\Dmsco\templates\our_brands.html:12 .\Home\templates\home.html:100
+#: .\Home\templates\home.html:188
+#: .\Innovation_Expansion\templates\innovation.html:12
+#: .\Innovation_Expansion\templates\innovation\pageinnovation.html:12
+#: .\News_Media\templates\media\media_details.html:12
+#: .\News_Media\templates\media_section.html:20
+#: .\News_Media\templates\news\news_details.html:12
+#: .\News_Media\templates\news_section.html:20
+#: .\Strategic_Partnerships\templates\details\partner_details.html:12
+#: .\Strategic_Partnerships\templates\testimonial.html:12
+#: .\Tenders\templates\tenders_section.html:25 .\templates\base.html:82
+#: .\templates\base.html:169 .\templates\base.html:310
+msgid "Home"
+msgstr "الرئيسية"
+
+#: .\Al_Dawaa\templates\Al_Dawaa_Departments.html:12
+#: .\Al_Dawaa\templates\Social_Responsibility.html:13
+#: .\Al_Dawaa\templates\Social_Responsibility\Social_Responsibility_details.html:20
+#: .\Al_Dawaa\templates\department\department.html:18
+#: .\Al_Dawaa\templates\our_program.html:11
+#: .\Al_Dawaa\templates\we_aldawaa.html:15
+msgid "Al Dawaa"
+msgstr "الدواء"
+
+#: .\Al_Dawaa\templates\Al_Dawaa_Departments.html:24
+msgid "AL-DAWAA DEPARTMENTS"
+msgstr "أقسام الدواء"
+
+#: .\Al_Dawaa\templates\Social_Responsibility.html:10
+#: .\Al_Dawaa\templates\Social_Responsibility.html:14
+#: .\Al_Dawaa\templates\Social_Responsibility\Social_Responsibility_details.html:16
+#: .\Al_Dawaa\templates\Social_Responsibility\Social_Responsibility_details.html:21
+#: .\Al_Dawaa\templates\Social_Responsibility\Social_Responsibility_details.html:22
+#: .\Home\templates\home.html:127 .\Home\templates\home.html:216
+#: .\templates\base.html:109 .\templates\base.html:197
+#: .\templates\base.html:328
+msgid "Social Responsibility"
+msgstr "المسؤولية المجتمعية"
+
+#: .\Al_Dawaa\templates\department\department.html:15
+#: .\Al_Dawaa\templates\department\department.html:20
+msgid "Department"
+msgstr "قسم"
+
+#: .\Al_Dawaa\templates\department\department.html:19
+msgid "Departments"
+msgstr "الأقسام"
+
+#: .\Al_Dawaa\templates\our_program.html:26
+msgid "OUR PROGRAMS"
+msgstr "برامجنا"
+
+#: .\Al_Dawaa\templates\we_aldawaa.html:9
+#: .\Al_Dawaa\templates\we_aldawaa.html:18
+msgid "We Aldawaa"
+msgstr "نحن الدواء"
+
+#: .\Contact_Us\models.py:20 .\Contact_Us\models.py:21
+#: .\Contact_Us\models.py:84 .\Contact_Us\models.py:85
+msgid "Contact Info"
+msgstr "معلومات الاتصال"
+
+#: .\Contact_Us\models.py:42
+msgid "card email"
+msgstr "البريد الالكتروني"
+
+#: .\Contact_Us\models.py:49
+msgid "card phone"
+msgstr "رقم الهاتف"
+
+#: .\Contact_Us\models.py:56
+msgid "pragraph link"
+msgstr "رابط االمقالة"
+
+#: .\Contact_Us\models.py:63
+msgid "link pragraph"
+msgstr "رابط المقالة"
+
+#: .\Contact_Us\models.py:70
+msgid "address title"
+msgstr "عنوان العنوان"
+
+#: .\Contact_Us\models.py:77
+msgid "address link"
+msgstr "رابط العنوان"
+
+#: .\Contact_Us\models.py:92
+msgid "name"
+msgstr "الاسم"
+
+#: .\Contact_Us\models.py:93
+msgid "email"
+msgstr "البريد الإلكتروني"
+
+#: .\Contact_Us\models.py:94
+msgid "phone"
+msgstr "الهاتف"
+
+#: .\Contact_Us\models.py:95
+msgid "message"
+msgstr "الرسالة"
+
+#: .\Contact_Us\models.py:99 .\Contact_Us\models.py:100
+msgid "Contact message"
+msgstr "رسالة التواصل"
+
+#: .\Contact_Us\templates\contact_us.html:9
+#: .\Contact_Us\templates\contact_us.html:15
+msgid "contact_us"
+msgstr "اتصل بنا"
+
+#: .\Contact_Us\templates\contact_us.html:92
+msgid "Your Name"
+msgstr "اسمك"
+
+#: .\Dmsco\models.py:14 .\Innovation_Expansion\models.py:54
+#: .\News_Media\models.py:145
+msgid "video"
+msgstr "فيديو"
+
+#: .\Dmsco\models.py:15
+msgid "image"
+msgstr "صورة"
+
+#: .\Dmsco\models.py:16
+msgid "Years Of Experience"
+msgstr "سنوات من الخبرة"
+
+#: .\Dmsco\models.py:18 .\Dmsco\models.py:43
+msgid "description"
+msgstr "الوصف"
+
+#: .\Dmsco\models.py:24 .\Dmsco\models.py:25
+#: .\Dmsco\templates\about_us.html:18 .\Dmsco\templates\about_us.html:35
+msgid "About Us"
+msgstr "نبذه عنا"
+
+#: .\Dmsco\models.py:41
+msgid "Image Card"
+msgstr "اضافة الصورة"
+
+#: .\Dmsco\models.py:42
+msgid "title card"
+msgstr "اضافة العنوان"
+
+#: .\Dmsco\models.py:44
+msgid "Is Collapsible"
+msgstr "هل قائمة منسدلة"
+
+#: .\Dmsco\models.py:45
+msgid "Collapse Description"
+msgstr "وصف القائمة المنسدلة"
+
+#: .\Dmsco\models.py:62 .\Dmsco\models.py:63 .\Dmsco\models.py:83
+#: .\Dmsco\models.py:84 .\Dmsco\templates\board_of_directors.html:14
+#: .\Dmsco\templates\board_of_directors.html:23 .\Home\templates\home.html:109
+#: .\Home\templates\home.html:198 .\templates\base.html:91
+#: .\templates\base.html:179 .\templates\base.html:316
+msgid "Board Of Directors"
+msgstr " أعضاء مجلس الادارة"
+
+#: .\Dmsco\models.py:78
+msgid "Person name"
+msgstr "اسم الشخص"
+
+#: .\Dmsco\models.py:79
+msgid "person position"
+msgstr "منصب الشخص"
+
+#: .\Dmsco\models.py:80
+msgid "person image"
+msgstr "صورة الشخص"
+
+#: .\Dmsco\models.py:93
+msgid "image banner_brand"
+msgstr "صورة دعاية العلامة التجارية"
+
+#: .\Dmsco\models.py:101 .\Dmsco\models.py:102
+msgid "Our Brand"
+msgstr "علامتنا التجارية"
+
+#: .\Dmsco\models.py:117
+msgid "brand name"
+msgstr "اسم العلامة التجارية"
+
+#: .\Dmsco\models.py:118
+msgid "brand image"
+msgstr "صورة العلامة التجارية"
+
+#: .\Dmsco\models.py:121 .\Dmsco\models.py:122
+msgid "Brands"
+msgstr "العلامات التجارية"
+
+#: .\Dmsco\templates\about_us.html:14
+msgid "About us"
+msgstr "نبذة عنا"
+
+#: .\Dmsco\templates\about_us.html:17
+#: .\Dmsco\templates\board_of_directors.html:20
+#: .\Dmsco\templates\our_brands.html:15 .\Home\templates\home.html:103
+#: .\Home\templates\home.html:192 .\templates\base.html:85
+#: .\templates\base.html:173
+msgid "Dmsco"
+msgstr "دمسكو"
+
+#: .\Dmsco\templates\about_us.html:28
+msgid "Shape"
+msgstr "الشكل"
+
+#: .\Dmsco\templates\about_us.html:51
+msgid "About Us Image"
+msgstr "صورة نبذة عنا"
+
+#: .\Dmsco\templates\about_us.html:57
+msgid "Years Of Experienced"
+msgstr "سنوات الخبرة"
+
+#: .\Dmsco\templates\about_us.html:67
+msgid "Call Now"
+msgstr "اتصل الآن"
+
+#: .\Dmsco\templates\board_of_directors.html:17
+msgid "Go to Home Page"
+msgstr "انتقل إلى الصفحة الرئيسية"
+
+#: .\Dmsco\templates\board_of_directors.html:37
+msgid "BOARD OF DIRECTORS"
+msgstr "أعضاء مجلس الادارة"
+
+#: .\Dmsco\templates\board_of_directors.html:78
+msgid "No members available"
+msgstr "لا يوجد أعضاء متاحين"
+
+#: .\Dmsco\templates\our_brands.html:9 .\Dmsco\templates\our_brands.html:18
+#: .\Dmsco\templates\our_brands.html:31 .\Home\templates\home.html:112
+#: .\Home\templates\home.html:201 .\templates\base.html:94
+#: .\templates\base.html:182 .\templates\base.html:319
+msgid "Our Brands"
+msgstr "علاماتنا التجارية"
+
+#: .\Home\templates\home.html:106 .\Home\templates\home.html:195
+#: .\templates\base.html:88 .\templates\base.html:176
+#: .\templates\base.html:313
+msgid "About Dmsco"
+msgstr "نبذة عن شركة دمسكو"
+
+#: .\Home\templates\home.html:118 .\Home\templates\home.html:207
+#: .\templates\base.html:100 .\templates\base.html:188
+msgid "Al-Dawaa"
+msgstr "الدواء"
+
+#: .\Home\templates\home.html:121 .\Home\templates\home.html:210
+#: .\templates\base.html:103 .\templates\base.html:191
+#: .\templates\base.html:322
+msgid "We Al-Dawaa"
+msgstr "نحن الدواء"
+
+#: .\Home\templates\home.html:135 .\Home\templates\home.html:224
+#: .\Innovation_Expansion\models.py:29
+#: .\Innovation_Expansion\templates\innovation.html:9
+#: .\Innovation_Expansion\templates\innovation.html:15
+#: .\Innovation_Expansion\templates\innovation\pageinnovation.html:15
+#: .\templates\base.html:117 .\templates\base.html:205
+#: .\templates\base.html:334
+msgid "Innovation & Expansion"
+msgstr "الابتكار والتوسع"
+
+#: .\Home\templates\home.html:138 .\Home\templates\home.html:227
+#: .\Strategic_Partnerships\templates\details\partner_details.html:15
+#: .\Strategic_Partnerships\templates\testimonial.html:9
+#: .\Strategic_Partnerships\templates\testimonial.html:15
+#: .\templates\base.html:120 .\templates\base.html:208
+#: .\templates\base.html:346
+msgid "Strategic Partnerships"
+msgstr "الشراكات الاستراتيجية"
+
+#: .\Home\templates\home.html:141 .\Home\templates\home.html:230
+#: .\Tenders\models.py:29 .\Tenders\models.py:30 .\Tenders\models.py:52
+#: .\Tenders\models.py:53 .\Tenders\templates\tenders_section.html:40
+#: .\templates\base.html:123 .\templates\base.html:211
+#: .\templates\base.html:349
+msgid "Tenders"
+msgstr "العطاءات"
+
+#: .\Home\templates\home.html:144 .\Home\templates\home.html:233
+#: .\News_Media\templates\media\media_details.html:15
+#: .\News_Media\templates\news\news_details.html:15 .\templates\base.html:126
+#: .\templates\base.html:214
+msgid "News & Media center"
+msgstr "مركز الأخبار والإعلام"
+
+#: .\Home\templates\home.html:147 .\Home\templates\home.html:236
+#: .\News_Media\models.py:32 .\News_Media\models.py:33
+#: .\News_Media\templates\news_section.html:17
+#: .\News_Media\templates\news_section.html:26 .\templates\base.html:129
+#: .\templates\base.html:217 .\templates\base.html:352
+msgid "news"
+msgstr "الأخبار"
+
+#: .\Home\templates\home.html:150 .\Home\templates\home.html:239
+#: .\News_Media\templates\media_section.html:38 .\templates\base.html:132
+#: .\templates\base.html:220 .\templates\base.html:355
+msgid "Media"
+msgstr "الوسائط"
+
+#: .\Home\templates\home.html:155 .\Home\templates\home.html:244
+#: .\templates\base.html:137 .\templates\base.html:225
+#: .\templates\base.html:358
+msgid "Al-Dawaa Shop"
+msgstr "متجر الدواء"
+
+#: .\Home\templates\home.html:158 .\Home\templates\home.html:247
+#: .\templates\base.html:140 .\templates\base.html:228
+#: .\templates\base.html:361
+msgid "Careers"
+msgstr "الوظائف"
+
+#: .\Home\templates\home.html:161 .\Home\templates\home.html:250
+#: .\templates\base.html:143 .\templates\base.html:231
+#: .\templates\base.html:364
+msgid "IPO"
+msgstr "الطرح العام الأولي"
+
+#: .\Home\templates\home.html:164 .\Home\templates\home.html:253
+#: .\templates\base.html:146 .\templates\base.html:234
+#: .\templates\base.html:367
+msgid "Contact Us"
+msgstr "اتصل بنا"
+
+#: .\Innovation_Expansion\models.py:10
+msgid "Image Banner innovation"
+msgstr "ابتكار لافتة الصورة"
+
+#: .\Innovation_Expansion\models.py:30
+msgid " Innovation & Expansion"
+msgstr "الابتكار والتوسع"
+
+#: .\Innovation_Expansion\models.py:35
+msgid "innovation_image"
+msgstr "الابتكار_الصورة"
+
+#: .\Innovation_Expansion\models.py:36
+msgid "innovation title"
+msgstr "عنوان الابتكار"
+
+#: .\Innovation_Expansion\models.py:37
+msgid "innovation description"
+msgstr "وصف الابتكار"
+
+#: .\Innovation_Expansion\models.py:43 .\Innovation_Expansion\models.py:44
+msgid "Innovation_Expansion"
+msgstr "الابتكار والتوسع"
+
+#: .\Innovation_Expansion\models.py:48
+msgid ""
+"If you add Innovation & Expansion, you must save and continue editing before"
+" typing any entry for it to appear in the drop-down list."
+msgstr ""
+"إذا قمت بإضافة الابتكار والتوسع، يجب عليك الحفظ ومواصلة التحرير قبل كتابة أي"
+" إدخال حتى يظهر في القائمة المنسدلة."
+
+#: .\Innovation_Expansion\models.py:50 .\News_Media\models.py:61
+#: .\News_Media\models.py:138 .\Strategic_Partnerships\models.py:57
+msgid "image banner inside page"
+msgstr "صورة الافتة داخل الصفحة"
+
+#: .\Innovation_Expansion\models.py:51
+msgid "detsils innovation image"
+msgstr "تفاصيل صورة الابتكار"
+
+#: .\Innovation_Expansion\models.py:52
+msgid "detsils innovation title"
+msgstr " تفاصيل عنوان الابتكار"
+
+#: .\Innovation_Expansion\models.py:53
+msgid "detsils innovation description"
+msgstr "تفاصيل وصف الابتكار "
+
+#: .\Innovation_Expansion\models.py:66 .\Innovation_Expansion\models.py:67
+msgid "Innovation_inside_Page"
+msgstr "الابتكار داخل الصفحة"
+
+#: .\Innovation_Expansion\templates\innovation.html:26
+msgid "INNOVATION & EXPANSION"
+msgstr "الابتكار والتوسع"
+
+#: .\Innovation_Expansion\templates\innovation\pageinnovation.html:9
+#: .\Innovation_Expansion\templates\innovation\pageinnovation.html:18
+msgid "innovation"
+msgstr "الابتكار"
+
+#: .\News_Media\models.py:11
+msgid "Image Banner news"
+msgstr " لوحة إعلانية إخبارية "
+
+#: .\News_Media\models.py:40
+msgid "news title"
+msgstr "عنوان الاخبار"
+
+#: .\News_Media\models.py:41
+msgid "news description"
+msgstr "وصف الاخبار"
+
+#: .\News_Media\models.py:43
+msgid "news image"
+msgstr "صورة اخبارية"
+
+#: .\News_Media\models.py:49
+msgid "News Card"
+msgstr "بطاقة اخبارية"
+
+#: .\News_Media\models.py:50
+msgid "News Cards"
+msgstr "بطاقات اخبارية"
+
+#: .\News_Media\models.py:57
+msgid ""
+"If you add News Card, you must save and continue editing before typing any "
+"entry for it to appear in the drop-down list."
+msgstr ""
+"إذا قمت بإضافة بطاقة أخبار، يجب عليك حفظها ومواصلة التحرير قبل كتابة أي "
+"إدخال حتى يظهر في القائمة المنسدلة."
+
+#: .\News_Media\models.py:67
+msgid "news page image"
+msgstr "صورة صفحة الأخبار"
+
+#: .\News_Media\models.py:68
+msgid "news page title"
+msgstr "عنوان صفحة الأخبار"
+
+#: .\News_Media\models.py:69
+msgid "news page description"
+msgstr "وصف صفحة الأخبار"
+
+#: .\News_Media\models.py:81 .\News_Media\models.py:82
+msgid "News Details"
+msgstr "تفاصيل الخبر"
+
+#: .\News_Media\models.py:91
+msgid "Image Banner media"
+msgstr " لوحة إعلانية للوسائط "
+
+#: .\News_Media\models.py:112 .\News_Media\models.py:113
+#: .\News_Media\templates\media\media_details.html:9
+#: .\News_Media\templates\media_section.html:17
+#: .\News_Media\templates\media_section.html:26
+msgid "media"
+msgstr "الوسائط"
+
+#: .\News_Media\models.py:118
+msgid "media title"
+msgstr "عنوان الوسائط"
+
+#: .\News_Media\models.py:119
+msgid "media description"
+msgstr "وصف الوسائط"
+
+#: .\News_Media\models.py:120
+msgid "media image"
+msgstr "صورة إعلامية"
+
+#: .\News_Media\models.py:126
+msgid "Media Card"
+msgstr "بطاقة الوسائط"
+
+#: .\News_Media\models.py:127
+msgid "Media Cards"
+msgstr "بطاقات الوسائط"
+
+#: .\News_Media\models.py:134
+msgid ""
+"If you add Media Card, you must save and continue editing before typing any "
+"entry for it to appear in the drop-down list."
+msgstr ""
+"إذا قمت بإضافة بطاقة الوسائط، فيجب عليك الحفظ ومواصلة التحرير قبل كتابة أي "
+"إدخال حتى يظهر في القائمة المنسدلة."
+
+#: .\News_Media\models.py:146
+msgid "media page title"
+msgstr "عنوان صفحة الوسائط"
+
+#: .\News_Media\models.py:147
+msgid "media page description"
+msgstr "وصف صفحة الوسائط"
+
+#: .\News_Media\models.py:160 .\News_Media\models.py:161
+msgid "Media Details"
+msgstr "تفاصيل الوسائط"
+
+#: .\News_Media\templates\media\media_details.html:18
+msgid "media center"
+msgstr "مركز الاعلام"
+
+#: .\News_Media\templates\media\media_details.html:21
+msgid "media "
+msgstr "الوسائط"
+
+#: .\News_Media\templates\media_section.html:23
+#: .\News_Media\templates\news_section.html:23
+msgid "News & Media center "
+msgstr "مركز الأخبار والإعلام"
+
+#: .\News_Media\templates\media_section.html:59
+#: .\News_Media\templates\news_section.html:68
+msgid "Read More"
+msgstr "اقرأ المزيد"
+
+#: .\News_Media\templates\media_section.html:61
+#: .\News_Media\templates\news_section.html:71
+msgid "Details coming soon!"
+msgstr "التفاصيل قريبا!"
+
+#: .\News_Media\templates\news\news_details.html:9
+msgid "new"
+msgstr "جديد"
+
+#: .\News_Media\templates\news\news_details.html:18
+#: .\News_Media\templates\news_section.html:39
+msgid "News"
+msgstr "أخبار"
+
+#: .\News_Media\templates\news\news_details.html:21
+msgid "new "
+msgstr "جديد"
+
+#: .\Strategic_Partnerships\models.py:9
+msgid "Image Banner strategic"
+msgstr " لافتة تصميم استراتيجي "
+
+#: .\Strategic_Partnerships\models.py:28 .\Strategic_Partnerships\models.py:29
+msgid "strategic"
+msgstr "استراتيجي"
+
+#: .\Strategic_Partnerships\models.py:33
+msgid "partner_image"
+msgstr " صورة الشريك التجاري "
+
+#: .\Strategic_Partnerships\models.py:39 .\Strategic_Partnerships\models.py:59
+msgid "partner title"
+msgstr "لقب الشريك"
+
+#: .\Strategic_Partnerships\models.py:40
+msgid "partner content"
+msgstr "محتوى الشريك"
+
+#: .\Strategic_Partnerships\models.py:41
+msgid "partner image"
+msgstr "صورة الشريك"
+
+#: .\Strategic_Partnerships\models.py:47 .\Strategic_Partnerships\models.py:48
+msgid "Testimonial"
+msgstr "شهادة"
+
+#: .\Strategic_Partnerships\models.py:55
+msgid ""
+"If you add a Testimonial Card, you must save and continue editing before "
+"typing any entry for it to appear in the drop-down list."
+msgstr ""
+"إذا قمت بإضافة بطاقة توصية، يجب عليك حفظها ومواصلة التحرير قبل كتابة أي "
+"إدخال حتى يظهر في القائمة المنسدلة."
+
+#: .\Strategic_Partnerships\models.py:60
+msgid "partner description"
+msgstr "وصف الشريك"
+
+#: .\Strategic_Partnerships\models.py:61
+msgid "partner main image"
+msgstr "الصورة الرئيسية للشريك"
+
+#: .\Strategic_Partnerships\models.py:63
+msgid "first person name"
+msgstr "اسم الشخص الأول"
+
+#: .\Strategic_Partnerships\models.py:64
+msgid "first person position"
+msgstr "منصب الشخص الأول"
+
+#: .\Strategic_Partnerships\models.py:65
+msgid "first person image"
+msgstr "صورة الشخص الأول"
+
+#: .\Strategic_Partnerships\models.py:67
+msgid "second person name"
+msgstr "اسم الشخص الثاني"
+
+#: .\Strategic_Partnerships\models.py:68
+msgid "second person position"
+msgstr "منصب الشخص الثاني"
+
+#: .\Strategic_Partnerships\models.py:69
+msgid "second person image"
+msgstr "صورة الشخص الثاني"
+
+#: .\Strategic_Partnerships\models.py:81 .\Strategic_Partnerships\models.py:82
+msgid "Partner"
+msgstr "شريك"
+
+#: .\Strategic_Partnerships\templates\details\partner_details.html:9
+#: .\Strategic_Partnerships\templates\details\partner_details.html:18
+msgid "Strategic "
+msgstr "استراتيجي"
+
+#: .\Strategic_Partnerships\templates\testimonial.html:31
+msgid "Partners of Success"
+msgstr "شركاء النجاح"
+
+#: .\Tenders\models.py:8
+msgid "Image Banner Tender"
+msgstr " لافتة عطاء مصورة "
+
+#: .\Tenders\models.py:39
+msgid "Tender Title"
+msgstr "عنوان العطاء"
+
+#: .\Tenders\models.py:41
+msgid "Tender Image or Icon"
+msgstr "صورة أو أيقونة العطاء"
+
+#: .\Tenders\models.py:61
+msgid ""
+"Here you can choose more than one tender; you must save and continue editing"
+" for it to appear."
+msgstr ""
+"هنا يمكنك اختيار أكثر من عطاء واحد؛ ويجب عليك الحفظ والاستمرار في التحرير "
+"حتى يظهر."
+
+#: .\Tenders\models.py:64
+msgid "Category Title"
+msgstr "عنوان الفئة"
+
+#: .\Tenders\models.py:65
+msgid "Category PDF File"
+msgstr "فئة ملف PDF"
+
+#: .\Tenders\models.py:66
+msgid "Category Description"
+msgstr "وصف الفئة"
+
+#: .\Tenders\models.py:72
+msgid "Tender Category"
+msgstr "فئة العطاء"
+
+#: .\Tenders\models.py:73
+msgid "Tender Categories"
+msgstr "فئات العطاءات"
+
+#: .\Tenders\templates\tenders_section.html:22
+#: .\Tenders\templates\tenders_section.html:28
+msgid "tenders"
+msgstr "العطاءات"
+
+#: .\Tenders\templates\tenders_section.html:55
+msgid "ALL"
+msgstr "الجميع"
+
+#: .\templates\base.html:288
+msgid ""
+"At DMSCO, for more than a quarter of a century, we are interested in health "
+"care, providing the highest quality"
+msgstr ""
+"في شركة دمسكو، منذ أكثر من ربع قرن، نهتم بالرعاية الصحية، ونقدم أعلى مستوى "
+"من الجودة"
+
+#: .\templates\base.html:291
+msgid ""
+"Khobar, Kingdom of Saudi Arabia Eastern Cement Towers King Fahd Road, Al "
+"Rawabi"
+msgstr ""
+"الخبر، المملكة العربية السعودية أبراج إسمنت الشرقية طريق الملك فهد، "
+"حي الروابي"
+
+#: .\templates\base.html:306 .\templates\base.html:342
+msgid "Quick Links"
+msgstr "روابط سريعة"
+
+#: .\templates\base.html:375
+msgid "Download our app"
+msgstr "قم بتنزيل تطبيقنا"
+
+#: .\templates\base.html:393
+msgid "Developed By"
+msgstr "تم التطوير بواسطة"
+
+#: .\templates\base.html:397
+msgid " All Rights Reserved."
+msgstr "جميع الحقوق محفوظة."

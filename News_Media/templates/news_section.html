@@ -1,0 +1,76 @@
+{% extends 'base.html' %} {% load static %} {% load i18n %} {% block body %}
+  {% if image_banner_news.image_banner_news %}
+    <div 
+        class="breadcumb-wrapper" 
+        data-bg-src="{{ image_banner_news.image_banner_news.url }}" 
+        style="background-image: url('{{ image_banner_news.image_banner_news.url }}');"
+    >
+{% else %}
+    <div 
+        class="breadcumb-wrapper" 
+        data-bg-src="{% static 'assets/img/bg/breadcumb-bg.jpg' %}" 
+        style="background-image: url('{% static 'assets/img/bg/breadcumb-bg.jpg' %}');"
+    >
+{% endif %}
+  <div class="container {% if LANGUAGE_CODE == 'ar' %}rtl{% endif %}">
+      <div class="breadcumb-content">
+        <h1 class="breadcumb-title">{% trans 'news' %}</h1>
+        <ul class="breadcumb-menu">
+          <li>
+            <a href="{% url 'home' %}">{% trans 'Home' %}</a>
+          </li>
+          <li>
+            {% trans 'News & Media center ' %}
+          </li>
+          <li>
+            {% trans 'news' %}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- news_section.html -->
+  <section class="bg-smoke p-4" id="blog-sec">
+    <div class="container">
+      <div class="row justify-content-lg-between justify-content-center align-items-center">
+        <div class="col-lg">
+          <div class="title-area text-center text-lg-start">
+            <h2 class="sec-title" style="{% if LANGUAGE_CODE == 'ar' %}text-align: right;{% endif %}">{% trans 'News' %}</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row gy-4">
+        {% for news in news_items %}
+          <div class="col-xl-4 col-md-6">
+            <div class="swiper-slide">
+              <div class="service-grid">
+                <div class="box-shape">
+                  <img src="{% static 'assets/img/bg/service_grid_shape.png' %}" alt="image" />
+                </div>
+                <div class="box-img">
+                  <div class="img">
+                    <img class="w-100 responsive-image" style="height: 200px;" src="{{ news.news_image.url }}" alt="{{ news.news_title }} " />
+                </div>
+                </div>
+                <div class="box-content">
+                  <p class="box-doctor" aria-label="Publication date">{{ news.news_date }}</p>
+                  <h3 class="box-title">{{ news.news_title }}</h3>
+                  <p class="box-text pt-3">{{ news.news_description|truncatewords:20 }}</p>
+                  {% if news.newsdetails.slug %}
+                  <a href="{% url 'news_media:news_details' news.newsdetails.slug %}" class="th-btn btn-sm style2">
+                    {% trans 'Read More' %} {{ news.news_title|truncatewords:1  }}
+                 </a>
+                  {% else %}
+                      <p class="box-text">{% trans 'Details coming soon!' %}</p>
+                  {% endif %}
+              </div>
+              
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endblock %}

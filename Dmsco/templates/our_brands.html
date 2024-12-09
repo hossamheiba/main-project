@@ -1,0 +1,51 @@
+{% extends 'base.html' %} {% load static %} {% load i18n %} {% block body %}
+   {% if image_banner_brand.image_banner_brand %}
+  <div class="breadcumb-wrapper" data-bg-src="{{ image_banner_brand.image_banner_brand.url }}">
+   {% else %}
+  <div class="breadcumb-wrapper" data-bg-src="{% static 'assets/img/bg/breadcumb-bg.jpg' %}">
+   {% endif %}
+    <div class="container">
+      <div class="breadcumb-content">
+        <h1 class="breadcumb-title">{% trans 'Our Brands' %}</h1>
+        <ul class="breadcumb-menu">
+          <li>
+            <a href="{% url 'home' %}">{% trans 'Home' %}</a>
+          </li>
+          <li>
+            {% trans 'Dmsco' %}
+          </li>
+          <li>
+            {% trans 'Our Brands' %}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <section class="overflow-hidden space" id="service-sec">
+    <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg">
+            <div class="title-area text-center text-lg-start">
+              <h2 class="sec-title" style="{% if LANGUAGE_CODE == 'ar' %}text-align: right;{% endif %}">{% trans 'Our Brands' %}</h2>
+            </div>
+        </div>
+        
+        <div class="row gy-4 justify-content-center">
+            
+            {% for brand in image_banner_brand.process_image.all %}
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="service-card background-image">
+                    <div class="box-shape"><img src="{% static 'assets/img/bg/service_card_bg.png' %}" style="height: 170px;" alt="Service"></div>
+                    <div class="box-icon box-icon-brand"><img style="height: 80px ; border-radius: 40px;" src="{{brand.brand_image.url}}" alt="Icon"></div>
+                    <h3 class="box-title">{{brand.brand_name}}</h3>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

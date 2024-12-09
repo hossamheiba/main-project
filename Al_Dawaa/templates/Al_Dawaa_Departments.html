@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block body %}
+    <div class="breadcumb-wrapper" data-bg-src="{% if imagebannerdepartment.image_banner_department %}{{ imagebannerdepartment.image_banner_department.url }}{% else %}{% static 'assets/img/bg/breadcumb-bg.jpg' %}{% endif %}">
+        <div class="container">
+            <div class="breadcumb-content">
+                <h1 class="breadcumb-title">{% trans 'Al-Dawaa Departments' %}</h1>
+                <ul class="breadcumb-menu">
+                    <li><a href="{% url 'home' %}">{% trans 'Home' %}</a></li>
+                    <li>{% trans 'Al Dawaa' %}</li>
+                    <li>{% trans 'Al-Dawaa Departments' %}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <section class="space">
+        <div class="container">
+            <div class="row justify-content-lg-between justify-content-center align-items-center">
+                <div class="col-lg">
+                    <div class="title-area text-center text-lg-start">
+                        <h2 class="sec-title" style="{% if LANGUAGE_CODE == 'ar' %}text-align: right;{% endif %}">{% trans 'AL-DAWAA DEPARTMENTS' %}</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row gy-4 justify-content-center">
+                {% for department in departments %}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card" style="background-color: {{ department.department_bg_color }};">
+                            <div class="title-wrap">
+                                <img src="{% if department.department_image_or_icon %}{{ department.department_image_or_icon.url }}{% else %}{% static 'assets/img/bg/breadcumb-bg.jpg' %}{% endif %}" style="width: 50px; height: 50px;" alt="{{ department.department_title }}" />
+                                <h3 class="box-title" style="color: {{ department.department_text_color }};">{{ department.department_title }}</h3>
+                            </div>
+                            <p class="box-text" style="color: {{ department.department_text_color }};">{{ department.department_description }}</p>
+                            {% if department.department.slug %}
+                                <a href="{% url 'Al-Dawaa:department_detail' department.department.slug %}" class="th-btn btn-sm mt-4">Read More</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

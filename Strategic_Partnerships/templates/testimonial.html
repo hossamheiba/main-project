@@ -1,0 +1,148 @@
+{% extends 'base.html' %} {% load static %} {% load i18n %} {% block body %}
+{% if image_banner_strategic.image_banner_strategic %}
+<div class="breadcumb-wrapper" data-bg-src="{{ image_banner_strategic.image_banner_strategic.url }}">
+  {% else %}
+  <div class="breadcumb-wrapper" data-bg-src="{% static 'assets/img/bg/breadcumb-bg.jpg' %}">
+  {% endif %}    
+      <div class="container">
+      <div class="breadcumb-content">
+        <h1 class="breadcumb-title">{% trans 'Strategic Partnerships' %}</h1>
+        <ul class="breadcumb-menu">
+          <li>
+            <a href="{% url 'home' %}">{% trans 'Home' %}</a>
+          </li>
+          <li>
+            {% trans 'Strategic Partnerships' %}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <div class="container my-5 py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg">
+          <div class="title-area text-center text-lg-start">
+            <h2 class="sec-title" style="{% if LANGUAGE_CODE == 'ar' %}text-align: right;{% endif %}">{% trans "Partners of Success" %}</h2>
+          </div>
+      </div>
+    </div>
+
+    <div class="bg-top-right mb-5" >
+      <div class="container th-container py-5">
+          <div class="swiper th-slider" id="brandSlider2" data-slider-options='{"breakpoints":{"0":{"slidesPerView":2},"420":{"slidesPerView":"3"},"768":{"slidesPerView":"4"},"992":{"slidesPerView":"5"},"1200":{"slidesPerView":"5"},"1400":{"slidesPerView":"6"}}}'>
+              <div class="swiper-wrapper">
+
+                
+                {% for partner_brand in partner_brands %}
+                  
+                <div class="swiper-slide">
+                  <div class="brand-box">
+                    <img style="border-radius: 10px;" src="{{partner_brand.partner_image.url}}" alt="Brand Logo">
+                  </div>
+                </div>
+                {% endfor %}
+                  
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+    <div class="row g-0" style="direction: {% if LANGUAGE_CODE == 'en' %}ltr{% else %}ltr{% endif %};">
+        <div class="col-lg-5 order-2 order-lg-0">
+            <div class="testi-box-img">
+                <!-- Image Slider with Fade Effect -->
+                <div class="swiper th-slider testi-box-thumb" id="testiSlideImg"
+                     data-slider-options='{"effect":"fade","spaceBetween":0,"loop":true,"autoplay":{"delay":3000}}'>
+                    <div class="swiper-wrapper">
+                        {% for testimonial in testimonials %}
+                        <div class="swiper-slide">
+                            {% if testimonial.partner.slug %}
+                            <a href="{% url 'Strategic:partners' testimonial.partner.slug %}">
+                                <img class="hvr-grow" style="height: 400px;" src="{{ testimonial.partner_image.url }}" alt="{{ testimonial.partner_title }}">
+                            </a>
+                            {% else %}
+                            <img class="hvr-grow" style="height: 400px;" src="{{ testimonial.partner_image.url }}" alt="{{ testimonial.partner_title }}">
+                            {% endif %}
+                                
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button data-slider-prev="#testiSlideImg" class="slider-arrow default">
+                    <i class="far fa-arrow-left"></i>
+                </button>
+            </div>
+        </div>
+    
+        <div class="col-lg-7">
+            <div class="title-area text-center">
+                <!-- Optional Title or Header Content -->
+            </div>
+            
+            <div class="testi-box-slide">
+                <!-- Text Content Slider with Thumbs -->
+                <div class="swiper th-slider" id="testiSlide2"
+                     data-slider-options='{"effect":"slide","loop":true,"spaceBetween":10,"thumbs":{"swiper":"#testiSlideImg"},"autoplay":{"delay":4000}}'>
+                    <div class="swiper-wrapper">
+                        {% for testimonial in testimonials %}
+                        <div class="swiper-slide">
+                            {% if testimonial.partner.slug %}
+                            <a href="{% url 'Strategic:partners' testimonial.partner.slug %}">
+                              <div class="testi-box">
+                                  <p class="box-text">{{ testimonial.partner_content }}</p>
+                                  <h3 class="box-title">{{ testimonial.partner_title }}</h3>
+                              </div>
+                          </a>
+                            {% else %}
+                            <div class="testi-box">
+                              <p class="box-text">{{ testimonial.partner_content }}</p>
+                              <h3 class="box-title">{{ testimonial.partner_title }}</h3>
+                          </div>  
+                          {% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="testi-box-quote">
+                    <img src="{% static 'assets/img/icon/quote_2.svg' %}" alt="Image">
+                </div>
+                <button data-slider-next="#testiSlide2" class="slider-arrow default">
+                    <i class="far fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

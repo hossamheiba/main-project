@@ -1,0 +1,59 @@
+{% extends 'base.html' %} {% load static %} {% load i18n %} {% block body %}
+{% if imagebannerinnovation.image_banner_innovation %}
+<div class="breadcumb-wrapper" data-bg-src="{{ imagebannerinnovation.image_banner_innovation.url }}">
+  {% else %}
+  <div class="breadcumb-wrapper" data-bg-src="{% static 'assets/img/bg/breadcumb-bg.jpg' %}">
+  {% endif %}  
+    <div class="container">
+      <div class="breadcumb-content">
+        <h1 class="breadcumb-title">{% trans 'Innovation & Expansion' %}</h1>
+        <ul class="breadcumb-menu">
+          <li>
+            <a href="{% url 'home' %}">{% trans 'Home' %}</a>
+          </li>
+          <li>
+            {% trans 'Innovation & Expansion' %}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <section class="space" id="achieve-sec">
+    <div class="container">
+      <div class="col-lg">
+        <div class="title-area text-center text-lg-start">
+          <h2 class="sec-title" style="{% if LANGUAGE_CODE == 'ar' %}text-align: right;{% endif %}">{% trans 'INNOVATION & EXPANSION' %}</h2>
+        </div>
+      </div>
+
+      <div class="achieve-box-wrap " style="direction: {% if LANGUAGE_CODE == 'en' %}ltr{% else %}ltr{% endif %};">
+        {% for entry in entries %}
+        {% if entry.innovation.slug %}
+          <a href="{% url 'innovations:innovation_expansion' entry.innovation.slug %}">
+            {% else %}
+            
+            {% endif %}                
+            <div class="achieve-box hover-item {% if forloop.first %}item-active{% endif %}">
+              <div class="box-img">
+                <img style="width: 300px;" src="{{ entry.innovation_image.url }}" alt="{{ entry.innovation_title }}" />
+              </div>
+              <div class="box-year">
+                <img src="{{ entry.innovation_image.url }}" alt="{{ entry.innovation_title }}" />
+              </div>
+              <div class="media-body">
+                {% if entry.innovation.slug %}
+                <h3 class="box-title"><a href="{% url 'innovations:innovation_expansion' entry.innovation.slug %}">{{ entry.innovation_title }}</a></h3>
+                {% else %}
+                
+                {% endif %}                
+                <p class="box-text">{{ entry.innovation_description|truncatewords:20 }}</p>
+              </div>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endblock %}
+

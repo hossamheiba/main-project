@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block body %}
+
+<!-- Breadcrumb Section -->
+{% if details_social_responsibility.image_banner_inside_page %}
+    <div class="breadcumb-wrapper" data-bg-src="{{ details_social_responsibility.image_banner_inside_page.url }}">
+{% else %}
+    <div class="breadcumb-wrapper" data-bg-src="{% static 'assets/img/bg/breadcumb-bg.jpg' %}">
+{% endif %}   
+
+    <div class="container">
+        <div class="breadcumb-content">
+            <h1 class="breadcumb-title">
+                {% trans 'Social Responsibility' %} {{ details_social_responsibility.title_details_social }}
+            </h1>
+            <ul class="breadcumb-menu">
+                <li><a href="{% url 'home' %}">{% trans 'Home' %}</a></li>
+                <li>{% trans 'Al Dawaa' %}</li>
+                <li>{% trans 'Social Responsibility' %}</li>
+                <li>{% trans 'Social Responsibility' %} {{ details_social_responsibility.title_details_social }}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Social Responsibility Content Section -->
+<div class="container">
+    <div class="th-blog blog-single has-post-thumbnail mt-5">
+        
+        <!-- Carousel Section -->
+        <div class="blog-img">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{{ details_social_responsibility.image_details_social.url }}" class="d-block w-100" style="height:60vh;" alt="image" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog Content Section -->
+        <div class="blog-content">
+            <h2 class="blog-title">{{ details_social_responsibility.title_details_social }}</h2>
+            <p class="blog-text">{{ details_social_responsibility.description_details_social }}</p>
+
+            {% if details_social_responsibility.link %}
+                <h6 class="hero-text"><a href="{{ details_social_responsibility.link }}">{{ details_social_responsibility.link }}</a></h6>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
